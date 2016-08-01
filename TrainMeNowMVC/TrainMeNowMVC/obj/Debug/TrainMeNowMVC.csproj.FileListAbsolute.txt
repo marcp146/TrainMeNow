@@ -157,3 +157,7 @@ D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.xml
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.csprojResolveAssemblyReference.cache
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.pdb
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.pdb
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.xml
