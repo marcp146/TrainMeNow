@@ -161,3 +161,5 @@ D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.pdb
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.xml
