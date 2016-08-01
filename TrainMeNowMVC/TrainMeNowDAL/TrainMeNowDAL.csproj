@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAL_classes\TrainingsDAL.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
