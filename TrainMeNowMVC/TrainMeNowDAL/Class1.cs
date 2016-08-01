@@ -8,6 +8,6 @@ namespace TrainMeNowDAL
 {
     public class Class1
     {
-        Push test
+     
     }
 }
