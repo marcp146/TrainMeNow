@@ -62,6 +62,7 @@
     <Compile Include="Role.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdersDal.cs" />
     <Compile Include="Training.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
