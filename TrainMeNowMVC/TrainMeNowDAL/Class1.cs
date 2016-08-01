@@ -8,6 +8,5 @@ namespace TrainMeNowDAL
 {
     public class Class1
     {
-        AA
-    }
+asdasdasdasdasdasdasds    }
 }
