@@ -16,6 +16,7 @@ namespace TrainMeNowMVC.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            ViewBag.Var1 = "info1";
 
             return View();
         }
