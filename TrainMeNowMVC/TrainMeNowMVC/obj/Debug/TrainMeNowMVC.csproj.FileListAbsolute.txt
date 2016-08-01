@@ -1,3 +1,56 @@
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\ApplicationInsights.config
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\csc.exe
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\vbc.exe
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll.config
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.pdb
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\WebGrease.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.pdb
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.csprojResolveAssemblyReference.cache
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.pdb
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\ApplicationInsights.config
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\csc.exe
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -51,55 +104,56 @@ C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\T
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.csprojResolveAssemblyReference.cache
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.dll
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.pdb
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\ApplicationInsights.config
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\csc.exe
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\vbc.exe
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll.config
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.pdb
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\WebGrease.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.pdb
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.xml
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.dll
-C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.pdb
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\ApplicationInsights.config
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\csc.exe
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Collections.Immutable.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\vbc.exe
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\roslyn\VBCSCompiler.exe.config
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll.config
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowMVC.pdb
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\WebGrease.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.DependencyCollector.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.Web.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.AI.WindowsServer.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.ApplicationInsights.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Helpers.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Mvc.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Optimization.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.Razor.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\System.Web.WebPages.Razor.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Antlr3.Runtime.pdb
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\Newtonsoft.Json.xml
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.csprojResolveAssemblyReference.cache
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.dll
+D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\obj\Debug\TrainMeNowMVC.pdb
