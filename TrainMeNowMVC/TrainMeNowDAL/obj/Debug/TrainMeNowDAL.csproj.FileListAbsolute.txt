@@ -1,0 +1,13 @@
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\TrainMeNowDAL.dll.config
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\TrainMeNowDAL.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\TrainMeNowDAL.pdb
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.csprojResolveAssemblyReference.cache
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.dll
+C:\Users\anrotar\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.pdb
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.csprojResolveAssemblyReference.cache
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.dll
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.pdb
