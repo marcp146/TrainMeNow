@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="568068c35a52499fa8dbd9dfc84e4829" Name="Diagram1">
+        <EntityTypeShape EntityType="Internship2016NetTrainMeNowModel.Order" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Internship2016NetTrainMeNowModel.Payment" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Internship2016NetTrainMeNowModel.Role" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Internship2016NetTrainMeNowModel.Training" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Internship2016NetTrainMeNowModel.User" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="Internship2016NetTrainMeNowModel.FK_Orders_Payments" ManuallyRouted="false" />
+        <AssociationConnector Association="Internship2016NetTrainMeNowModel.FK_Orders_Trainings" ManuallyRouted="false" />
+        <AssociationConnector Association="Internship2016NetTrainMeNowModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Internship2016NetTrainMeNowModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Internship2016NetTrainMeNowModel.FK_Trainings_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
