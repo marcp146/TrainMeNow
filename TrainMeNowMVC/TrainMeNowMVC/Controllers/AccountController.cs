@@ -78,5 +78,34 @@ namespace TrainMeNowMVC.Controllers
            
             return View();
         }
+        [HttpGet]
+        public ActionResult EditAccount()
+        {
+            if (Session["User"] != null) {
+                var model = new UserViewModel();
+                var user = new User();
+                user = Session["User"] as User;
+                model.Password = user.Password;
+                model.FirstName = user.FirstName;
+                model.LastName = user.LastName;
+                model.Email = user.Email;
+                return View(model);
+                    }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+        [HttpPost]
+        public ActionResult EditAccount (UserViewModel model)
+        {
+            var user = Session["User"] as User;
+            user.Email = model.Email;
+            user.Password = model.Password;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            Session["User"] = user;
+            return RedirectToAction("EditAccount");
+        }
     }
 }

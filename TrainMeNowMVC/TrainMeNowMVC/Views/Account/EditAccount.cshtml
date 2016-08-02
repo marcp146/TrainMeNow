@@ -1,0 +1,26 @@
+﻿@model TrainMeNowMVC.Models.UserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditAccount</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("EditAccount", "Account", FormMethod.Post))
+        {
+            <h3><label>First Name: </label> @Html.TextBoxFor(m => m.FirstName)</h3>
+            <h3><label>Last Name: </label> @Html.TextBoxFor(m => m.LastName)</h3>
+            <h3><label>Email: </label> @Html.TextBoxFor(m => m.Email)</h3>
+            <h3><label>Password: </label> @Html.TextBoxFor(m => m.Password)</h3>
+            <button type="submit" class="btn-success" >Edit</button>
+
+        }
+    </div>
+</body>
+</html>
