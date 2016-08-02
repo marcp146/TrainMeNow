@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using TrainMeNowDAL;
 using TrainMeNowMVC.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace TrainMeNowMVC.Controllers
 {
@@ -21,7 +22,7 @@ namespace TrainMeNowMVC.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public JsonResult GetListTraineesData()
         {

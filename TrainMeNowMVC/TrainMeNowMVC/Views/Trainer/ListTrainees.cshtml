@@ -4,11 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ListTrainees</h2>
+<h2>List of Trainees</h2>
 
 <div class="trainees-list"></div>
 
-<script type="text/javascript">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
     $.get("/Trainer/GetListTraineesData",
         function (data) {
             var i;
