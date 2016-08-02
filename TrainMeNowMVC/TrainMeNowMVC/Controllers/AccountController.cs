@@ -76,6 +76,7 @@ namespace TrainMeNowMVC.Controllers
                     if (u.Username.Equals(username) && u.Password.Equals(password))
                     {
                         Session["User"] = u.Id;
+                        Session["RoleId"] = u.RoleId;
                        
                         return RedirectToAction("Index", "Home");
                     }
@@ -128,6 +129,7 @@ namespace TrainMeNowMVC.Controllers
         public ActionResult LogOff(UserViewModel model)
         {
             Session["User"] = null;
+            Session["RoleId"] = null;
             return RedirectToAction("Index", "Home");
         }
     }
