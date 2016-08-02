@@ -1,8 +1,23 @@
-﻿
+﻿@model List<TrainMeNowMVC.Models.UserViewModel>
 @{
-    ViewBag.Title = "TrainerList";
+    ViewBag.Title = "Trainer List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>TrainerList</h2>
-
+<h2>Trainer List</h2>
+<table>
+    <tr>
+        <th width="25%">Username</th>
+        <th width="25%">First Name  </th>
+        <th width="25%">Last Name   </th>
+        <th width="25%">Email   </th>
+    </tr>
+    @foreach (var trainer in Model)
+    {
+        <tr>
+            <td>@trainer.Username</td>
+            <td>@trainer.FirstName</td>
+            <td>@trainer.LastName</td>
+            <td>@trainer.Email</td>
+        </tr>
+    }
+</table>
