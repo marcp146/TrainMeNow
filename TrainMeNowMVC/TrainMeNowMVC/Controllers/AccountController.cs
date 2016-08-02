@@ -88,11 +88,8 @@ namespace TrainMeNowMVC.Controllers
 
                         return RedirectToAction("Index", "Home");
                     }
-                    else
-                    {
-                        return RedirectToAction("Register", "Account");
-                    }
                 }
+                return RedirectToAction("Register", "Account");
             }
 
             return View();
