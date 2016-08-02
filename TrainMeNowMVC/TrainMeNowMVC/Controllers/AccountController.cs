@@ -68,9 +68,7 @@ namespace TrainMeNowMVC.Controllers
                 if(u.Username.Equals(username) && u.Password.Equals(password))
                 {
                     Session["User"] = u;
-                    RedirectToAction("Index","Home");
-                    //return View("Home/Index");
-                    break;
+                    return RedirectToAction("Index","Home");
                 }
                 else
                 {
