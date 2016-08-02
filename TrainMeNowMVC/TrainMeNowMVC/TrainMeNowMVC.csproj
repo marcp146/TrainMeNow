@@ -159,10 +159,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrwsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainerController.cs" />
     <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\TrainingViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,6 +217,8 @@
     <Content Include="Views\Account\EditAccount.cshtml" />
     <Content Include="Views\Brws\Display.cshtml" />
     <Content Include="Views\Trainings\TrainingsListByTrainerId.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Trainer\ListTrainees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,7 +16,14 @@ namespace TrainMeNowMVC.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public ActionResult Register()
@@ -45,7 +52,7 @@ namespace TrainMeNowMVC.Controllers
                     //{
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
-                    
+
 
                     user.Password = model.Password;
                     user.RoleId = 3;
@@ -78,6 +85,7 @@ namespace TrainMeNowMVC.Controllers
                         Session["User"] = u.Id;
                         Session["RoleId"] = u.RoleId;
                        
+
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -112,7 +120,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
-            var userinfo =  new User();
+            var userinfo = new User();
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);
             userinfo.Email = model.Email;
