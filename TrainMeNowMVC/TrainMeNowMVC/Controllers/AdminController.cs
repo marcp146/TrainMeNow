@@ -16,6 +16,8 @@ namespace TrainMeNowMVC.Controllers
 
         public ActionResult TrainerList()
         {
+
+
             return View();
         }
     }
