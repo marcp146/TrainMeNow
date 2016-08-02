@@ -16,5 +16,27 @@ namespace TrainMeNowMVC.Controllers
             var trainingsList = new TrainingsDal().getTrainings(id).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
             return View(trainingsList);
         }
+
+        public ActionResult MyTrainings()
+        {
+            if (Session["User"] != null)
+            {
+                List<OrdersViewModel> orderslist = new List<OrdersViewModel>();
+                using (var ctx = new Internship2016NetTrainMeNowEntities())
+                {
+                    var user = ctx.Users.Find((int)Session["User"]);
+                    var myTrainingList = user.Orders;
+                    foreach (Order ord in myTrainingList)
+                    {
+                        orderslist.Add(new OrdersViewModel { Id = ord.ID, Name = ord.Training.Name, Trainer = ord.Training.User.FirstName + " " + ord.Training.User.LastName });
+                    }
+                }
+                return View(orderslist);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
     }
 }
