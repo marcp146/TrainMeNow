@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="UsersDAL.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
@@ -62,6 +62,7 @@
     <Compile Include="Role.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdersDal.cs" />
     <Compile Include="Training.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>

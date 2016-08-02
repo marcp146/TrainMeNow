@@ -1,0 +1,15 @@
+﻿@model TrainMeNowMVC.Models.UserViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    <form>
+        Username: <input type="text" name="username" /><br />
+        Password: <input type="password" name="password"/><br/>
+        <input type="submit" value="Log in " onclick="Login" />
+    </form>
+}
+
