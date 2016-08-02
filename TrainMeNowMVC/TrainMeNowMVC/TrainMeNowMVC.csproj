@@ -209,6 +209,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\Account\EditAccount.cshtml" />
     <Content Include="Views\Brws\Display.cshtml" />
   </ItemGroup>
   <ItemGroup>

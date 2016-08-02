@@ -25,6 +25,16 @@ namespace TrainMeNowDAL
                 return users;
             }
         }
+
+        public void SaveUser(User u)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                ctx.Users.Add(u);
+                ctx.SaveChanges();
+                
+            }
+        }
     }
 
 }
