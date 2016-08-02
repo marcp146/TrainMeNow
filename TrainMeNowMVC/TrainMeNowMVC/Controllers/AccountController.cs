@@ -41,13 +41,13 @@ namespace TrainMeNowMVC.Controllers
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
 
-                    using (MD5 md5 = MD5.Create())
-                    {
-                        user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
-                    }
+                    //using (MD5 md5 = MD5.Create())
+                    //{
+                    //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
+                    //}
                     
 
-                  //  user.Password = model.Password;
+                    user.Password = model.Password;
                     user.RoleId = 3;
 
                     ctx.Users.Add(user);
