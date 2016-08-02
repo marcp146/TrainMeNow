@@ -18,6 +18,9 @@ namespace TrainMeNowMVC.Controllers
                 return View(trainings);
             }
 
-        }
+        } 
+
+     
+      
     }
 }
