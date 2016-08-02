@@ -16,7 +16,14 @@ namespace TrainMeNowMVC.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public ActionResult Register()
@@ -45,7 +52,7 @@ namespace TrainMeNowMVC.Controllers
                     //{
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
-                    
+
 
                     user.Password = model.Password;
                     user.RoleId = 3;
@@ -75,7 +82,10 @@ namespace TrainMeNowMVC.Controllers
                 {
                     if (u.Username.Equals(username) && u.Password.Equals(password))
                     {
-                        Session["User"] = u;
+                        Session["User"] = u.Id;
+                        Session["RoleId"] = u.RoleId;
+                       
+
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -93,8 +103,9 @@ namespace TrainMeNowMVC.Controllers
             if (Session["User"] != null)
             {
                 var model = new UserViewModel();
+                var dal = new UsersDAL();
                 var user = new User();
-                user = Session["User"] as User;
+                user = dal.getUser((int)Session["User"]);
                 model.Password = user.Password;
                 model.FirstName = user.FirstName;
                 model.LastName = user.LastName;
@@ -109,13 +120,25 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
-            var user = Session["User"] as User;
-            user.Email = model.Email;
-            user.Password = model.Password;
-            user.FirstName = model.FirstName;
-            user.LastName = model.LastName;
-            Session["User"] = user;
+            var userinfo = new User();
+            var userdal = new UsersDAL();
+            userinfo = userdal.getUser((int)Session["User"]);
+            userinfo.Email = model.Email;
+            userinfo.Password = model.Password;
+            userinfo.FirstName = model.FirstName;
+            userinfo.LastName = model.LastName;
+            using (var dal = new Internship2016NetTrainMeNowEntities())
+            {
+                dal.Entry(userinfo).State = System.Data.Entity.EntityState.Modified;
+                dal.SaveChanges();
+            }
             return RedirectToAction("EditAccount");
+        }
+        public ActionResult LogOff(UserViewModel model)
+        {
+            Session["User"] = null;
+            Session["RoleId"] = null;
+            return RedirectToAction("Index", "Home");
         }
     }
 }

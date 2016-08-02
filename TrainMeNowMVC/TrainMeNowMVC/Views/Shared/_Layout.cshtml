@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Train me now</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -23,10 +23,18 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    
-                    <li>@Html.ActionLink("Log in", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    
+                    @if (Session["User"]==null)
+                    {
+                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("LogOff", "LogOff", "Account")</li>
+                    }
+
+
+
                 </ul>
             </div>
         </div>
@@ -35,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Train me now</p>
         </footer>
     </div>
 
