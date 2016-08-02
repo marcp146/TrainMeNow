@@ -75,6 +75,7 @@ namespace TrainMeNowMVC.Controllers
                     else
                     {
                         return RedirectToAction("Register", "Account");
+
                     }
                 }
             }
