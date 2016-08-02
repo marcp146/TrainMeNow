@@ -28,16 +28,17 @@ namespace TrainMeNowMVC.Controllers
 
         }
 
-        public ActionResult BrowseByName(string name)
+        public ActionResult BrowseByName(string id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
 
-                var user = ctx.Users.Where(x => x.LastName == name).FirstOrDefault();
-                int id = user.Id;
-                var trainings = ctx.Trainings.Where(x => x.TrainerId == id).ToList();
+                var user = ctx.Users.Where(x => x.LastName == id).FirstOrDefault();
+                int ident = user.Id;
+                var trainings = ctx.Trainings.Where(x => x.TrainerId == ident).ToList(); 
+                var trainingList= trainings.Select(x=> new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
 
-                return View(trainings);
+                return View(trainingList);
 
             }
         }
