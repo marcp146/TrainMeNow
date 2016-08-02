@@ -22,6 +22,7 @@ namespace TrainMeNowMVC.Controllers
             return View();
         }
 
+        [HttpPost]
         public JsonResult GetListTraineesData()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
