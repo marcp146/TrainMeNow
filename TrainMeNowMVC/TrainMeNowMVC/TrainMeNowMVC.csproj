@@ -214,6 +214,7 @@
     <Content Include="Views\Account\EditAccount.cshtml" />
     <Content Include="Views\Brws\Display.cshtml" />
     <Content Include="Views\Trainings\TrainingsListByTrainerId.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
