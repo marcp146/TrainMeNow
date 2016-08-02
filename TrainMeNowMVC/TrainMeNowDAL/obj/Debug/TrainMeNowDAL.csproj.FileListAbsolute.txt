@@ -18,7 +18,6 @@ D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.SqlServer.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.xml
 D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\EntityFramework.SqlServer.xml
-D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.csprojResolveAssemblyReference.cache
 D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowDAL\obj\Debug\TrainMeNowDAL.pdb
 C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowDAL\bin\Debug\TrainMeNowDAL.dll.config

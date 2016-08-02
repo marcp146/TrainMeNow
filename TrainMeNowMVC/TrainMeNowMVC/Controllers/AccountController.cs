@@ -52,7 +52,21 @@ namespace TrainMeNowMVC.Controllers
             var username = model.Username;
             var password = model.Password;
             List<User> listaUseri = UsersDAL.getUsers();
-
+            foreach(User u in listaUseri)
+            {
+                if(u.Username.Equals(username) && u.Password.Equals(password))
+                {
+                    Session["User"] = u;
+                    RedirectToAction("Index","Home");
+                    //return View("Home/Index");
+                    break;
+                }
+                else
+                {
+                    RedirectToAction("Login");
+                }
+            }
+           
             return View();
         }
     }
