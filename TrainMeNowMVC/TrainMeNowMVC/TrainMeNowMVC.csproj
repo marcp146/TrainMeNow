@@ -159,6 +159,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrwsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,8 @@
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\Brws\Display.cshtml" />
     <Content Include="Views\Account\EditAccount.cshtml" />
+    <Content Include="Views\Brws\Display.cshtml" />
+    <Content Include="Views\Trainings\TrainingsListByTrainerId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
