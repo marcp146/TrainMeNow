@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using TrainMeNowMVC.Models;
 using TrainMeNowDAL;
 using System.Security.Cryptography;
-
+using System.Diagnostics;
 
 namespace TrainMeNowMVC.Controllers
 {
@@ -29,16 +29,27 @@ namespace TrainMeNowMVC.Controllers
         {
             using(var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                var user = new User();
-                user.Id = 1;
-                user.Email = model.Email;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.Password = model.Password;
-                user.RoleId = 3;
+                try
+                {
+                    var user = new User();
+                    user.Id = 123;
+                    user.Email = model.Email;
+                    user.FirstName = model.FirstName;
+                    user.LastName = model.LastName;
+                    user.Password = model.Password;
 
-                ctx.Users.Add(user);
-                ctx.SaveChanges();
+                  //  if(user.RoleId == 1)
+                 //   { }
+                    
+
+                    ctx.Users.Add(user);
+                    ctx.SaveChanges();
+                }
+                catch(Exception e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+                
             }
 
             return RedirectToAction("Display");
