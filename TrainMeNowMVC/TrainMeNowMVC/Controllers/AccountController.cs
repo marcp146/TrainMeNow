@@ -7,6 +7,7 @@ using TrainMeNowMVC.Models;
 using TrainMeNowDAL;
 using System.Security.Cryptography;
 using System.Diagnostics;
+using System.Text;
 
 namespace TrainMeNowMVC.Controllers
 {
@@ -27,56 +28,94 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult Register(UserViewModel model)
         {
-            using(var ctx = new Internship2016NetTrainMeNowEntities())
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
                 try
                 {
+
+                    Random rnd = new Random();
                     var user = new User();
-                    user.Id = 123;
+                    user.Id = rnd.Next(100000); ;
+                    user.Username = model.Username;
                     user.Email = model.Email;
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
-                    user.Password = model.Password;
 
-                  //  if(user.RoleId == 1)
-                 //   { }
+                    //using (MD5 md5 = MD5.Create())
+                    //{
+                    //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
+                    //}
                     
+
+                    user.Password = model.Password;
+                    user.RoleId = 3;
 
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    Debug.WriteLine(e.Message);
+                    Debug.WriteLine(e.StackTrace);
+
                 }
-                
+
             }
 
-            return RedirectToAction("Display");
+            return RedirectToAction("Index", "Home");
 
-
-
-            return View();
         }
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
             var password = model.Password;
             List<User> listaUseri = UsersDAL.getUsers();
-            foreach(User u in listaUseri)
+            if (username != null)
             {
-                if(u.Username.Equals(username) && u.Password.Equals(password))
+                foreach (User u in listaUseri)
                 {
-                    Session["User"] = u;
-                    return RedirectToAction("Index","Home");
-                }
-                else
-                {
-                    RedirectToAction("Login");
+                    if (u.Username.Equals(username) && u.Password.Equals(password))
+                    {
+                        Session["User"] = u;
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Register", "Account");
+                    }
                 }
             }
-           
+
             return View();
+        }
+        [HttpGet]
+        public ActionResult EditAccount()
+        {
+            if (Session["User"] != null)
+            {
+                var model = new UserViewModel();
+                var user = new User();
+                user = Session["User"] as User;
+                model.Password = user.Password;
+                model.FirstName = user.FirstName;
+                model.LastName = user.LastName;
+                model.Email = user.Email;
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+        [HttpPost]
+        public ActionResult EditAccount(UserViewModel model)
+        {
+            var user = Session["User"] as User;
+            user.Email = model.Email;
+            user.Password = model.Password;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            Session["User"] = user;
+            return RedirectToAction("EditAccount");
         }
     }
 }

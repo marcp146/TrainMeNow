@@ -7,9 +7,17 @@
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
     <form>
-        Username: <input type="text" name="username" /><br />
-        Password: <input type="password" name="password"/><br/>
-        <input type="submit" value="Log in " onclick="Login" />
+        <p>
+        Username: <input type="text" name="username" />
+        </p>
+            <br />
+        <p>
+        Password: <input type="password" name="password"/>
+        </p>  
+            <br/>
+        <p>
+        <input type="submit" value="Log in " onclick="Login"  />
+            </p>
     </form>
 }
 
