@@ -31,48 +31,49 @@ namespace TrainMeNowMVC.Controllers
             {
                 try
                 {
+
+                    Random rnd = new Random();
                     var user = new User();
-                    user.Id = 123;
+                    user.Id = rnd.Next(100000); ;
+                    user.Username = model.Username;
                     user.Email = model.Email;
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
                     user.Password = model.Password;
-
-                  //  if(user.RoleId == 1)
-                 //   { }
-                    
+                    user.RoleId = 3;
 
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
                 catch(Exception e)
                 {
-                    Debug.WriteLine(e.Message);
+                    Debug.WriteLine(e.StackTrace);
+
                 }
                 
             }
 
-            return RedirectToAction("Display");
-
-
-
-            return View();
+            return RedirectToAction("Index","Home");
+            
         }
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
             var password = model.Password;
             List<User> listaUseri = UsersDAL.getUsers();
-            foreach(User u in listaUseri)
-            {
-                if(u.Username.Equals(username) && u.Password.Equals(password))
+            if (username != null)
+            { 
+                foreach (User u in listaUseri)
                 {
-                    Session["User"] = u;
-                    return RedirectToAction("Index","Home");
-                }
-                else
-                {
-                    RedirectToAction("Login");
+                    if (u.Username.Equals(username) && u.Password.Equals(password))
+                    {
+                        Session["User"] = u;
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Register", "Account");
+                    }
                 }
             }
            
