@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace TrainMeNowDAL
 {
-    class OrdersDal
+    class OrdersDAL
     {
         protected Internship2016NetTrainMeNowEntities Context { get; set; }
 
-        public OrdersDal()
+        public OrdersDAL()
         {
             Context = new Internship2016NetTrainMeNowEntities();
         }
 
-        public OrdersDal(Internship2016NetTrainMeNowEntities context)
+        public OrdersDAL(Internship2016NetTrainMeNowEntities context)
         {
             Context = context;
         }
