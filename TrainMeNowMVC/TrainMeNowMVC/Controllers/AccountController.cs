@@ -7,6 +7,7 @@ using TrainMeNowMVC.Models;
 using TrainMeNowDAL;
 using System.Security.Cryptography;
 
+
 namespace TrainMeNowMVC.Controllers
 {
     public class AccountController : Controller
@@ -30,6 +31,14 @@ namespace TrainMeNowMVC.Controllers
             }
 
 
+
+            return View();
+        }
+        public ActionResult Login(UserViewModel model)
+        {
+            var username = model.Username;
+            var password = model.Password;
+            List<User> listaUseri = UsersDAL.getUsers();
 
             return View();
         }
