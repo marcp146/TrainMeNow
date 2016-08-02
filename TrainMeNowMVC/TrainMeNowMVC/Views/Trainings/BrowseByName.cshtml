@@ -1,6 +1,6 @@
 ﻿@model List<TrainMeNowMVC.Models.TrainingViewModel>
 @{
-    Layout = null;
+    ViewBag.Title ="BrowseByName";
 }
 
 <h2>Trainings List</h2>
@@ -11,6 +11,6 @@
         <h2>Name: @training.Name</h2>
         <h3>Trainer Id: @training.TrainerId</h3>
         <h2>Price: @training.Price</h2>
-        <h3>Price: @training.MaxUsers</h3>
+        <h3>Maximum Users: @training.MaxUsers</h3>
     </div>
 }
