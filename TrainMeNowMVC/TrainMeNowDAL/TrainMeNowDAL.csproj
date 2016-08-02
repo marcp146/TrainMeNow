@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TrainingsDal.cs" />
     <Compile Include="UsersDAL.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
