@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "ListTrainees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListTrainees</h2>
+
+<div class="trainees-list"></div>
+
+<script type="text/javascript">
+    $.get("/Trainer/GetListTraineesData",
+        function (data) {
+            var i;
+            var list = '';
+            for (i = 0; i < data.length; i++)
+            {
+                list += '<h2>' + data[i].Username + ', ' + data[i].FirstName + ',' + data[i].LastName + ','
+                               + data[i].Email + '</h2>';
+            }
+            $('.trainees-list').html(list);
+        });
+</script>
