@@ -17,6 +17,7 @@ namespace TrainMeNowDAL
             }
         }
 
+
         public static List<User> getUsers()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
