@@ -161,5 +161,9 @@ D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.dll
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.pdb
 D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.xml
-D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.dll
-D:\Proiect\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.dll
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.dll
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\TrainMeNowDAL.pdb
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.xml
+C:\Users\dacarp\Documents\Visual Studio 2015\Projects\TrainMeNow\TrainMeNowMVC\TrainMeNowMVC\bin\EntityFramework.SqlServer.xml
