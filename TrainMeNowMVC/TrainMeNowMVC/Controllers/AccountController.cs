@@ -108,5 +108,9 @@ namespace TrainMeNowMVC.Controllers
             Session["User"] = user;
             return RedirectToAction("EditAccount");
         }
+        public ActionResult LogOff(UserViewModel model)
+        {
+            return View();
+        }
     }
 }
