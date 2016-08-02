@@ -1,0 +1,44 @@
+﻿
+@{
+    switch ((int)Session["RoleId"])
+    {
+        case 1:
+            ViewBag.Title = "Admin";
+            break;
+        case 2:
+            ViewBag.Title = "Trainer";
+            break;
+        case 3:
+            ViewBag.Title = "User";
+            break;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (@Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.ActionLink("Edit Account Info", "EditAccount", "Account");
+    <br />
+
+    if ((int)Session["RoleId"] == 1)
+    {
+        @Html.ActionLink("Manage Trainers", "EditAccount", "Admin");
+        <br />
+        @Html.ActionLink("View Trainers", "TrainerList", "Admin");
+        <br /><br />
+        @Html.ActionLink("View Trainings", "TrainingList", "Admin");
+    }
+    else if ((int)Session["RoleId"] == 2)
+    {
+        @Html.ActionLink("Create Training", "CEVA", "Trainer");
+    }
+    else if ((int)Session["RoleId"] == 3)
+    {
+        @Html.ActionLink("View My Trainings", "CEVA", "User");
+    }
+
+
+}

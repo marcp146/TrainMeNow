@@ -25,12 +25,13 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (Session["User"]==null)
                     {
-                    <li>@Html.ActionLink("Log in", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("LogOff","LogOff","Account")</li>
+                        <li>@Html.ActionLink("Account", "Index", "Account")</li>
+                        <li>@Html.ActionLink("LogOff", "LogOff", "Account")</li>
                     }
 
 
