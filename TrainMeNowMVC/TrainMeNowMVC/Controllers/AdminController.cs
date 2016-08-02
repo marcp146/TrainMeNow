@@ -30,5 +30,9 @@ namespace TrainMeNowMVC.Controllers
             }
             return View(trainers);
         }
+        public ActionResult TrainingList()
+        {
+            return View();
+        }
     }
 }
