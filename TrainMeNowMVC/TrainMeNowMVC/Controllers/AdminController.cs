@@ -70,7 +70,7 @@ namespace TrainMeNowMVC.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Account");
             }
         }
 
@@ -80,7 +80,7 @@ namespace TrainMeNowMVC.Controllers
 
 
 
-            return View();
+            return View(model);
         }
 
         public ActionResult TrainingList()
