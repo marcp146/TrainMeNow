@@ -44,8 +44,8 @@ namespace TrainMeNowMVC.Controllers
                 foreach (var or in ordersList)
                 {
                     //var usersList2 = ctx.Users.Where(u => u.Id == or.UserID).ToList();
-              //      var usersList2 = new UsersDAL().GetUsersByID(or.Id).Select(x => new UserViewModel { Id = x.Id, Username = x.Username, FirstName = x.FirstName, LastName = x.LastName, Email = x.Email, Password = x.Password, RoleId = x.RoleId }).ToList();
-             //       usersList.AddRange(usersList2);
+                    var usersList2 = new UsersDAL().getUsersById(or.Id).Select(x => new UserViewModel { Id = x.Id, Username = x.Username, FirstName = x.FirstName, LastName = x.LastName, Email = x.Email, Password = x.Password }).ToList();
+                    usersList.AddRange(usersList2);
                 }
 
                 return Json(usersList, JsonRequestBehavior.AllowGet);
