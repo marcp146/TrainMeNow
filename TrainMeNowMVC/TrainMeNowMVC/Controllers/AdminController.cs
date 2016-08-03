@@ -88,5 +88,79 @@ namespace TrainMeNowMVC.Controllers
             var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
             return View(trainingList);
         }
+
+
+
+
+        public ActionResult TraineesList()
+        {
+            const int adminRoleID = 1;
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                if (Session["RoleId"] != null && (int)Session["RoleId"] == adminRoleID)
+                {
+                    List<OrderViewModel> ordersList = new List<OrderViewModel>();
+                    var ordersDal = new OrdersDAL();
+                    foreach (var order in ordersDal.GetAll())
+                    {
+                        ordersList.Add(new OrderViewModel
+                        {
+                            Id = order.ID,
+                            UserId = order.UserID,
+                            TrainingId = order.TrainingID,
+                            PaymentId = order.PaymentID
+                        });
+                    }
+
+                    List<UserViewModel> usersListWithDuplicates = new List<UserViewModel>();
+                    var usersDal = new UsersDAL();
+                    foreach (var order in ordersList)
+                    {
+                        foreach (var user in usersDal.getUsersById(order.UserId))
+                        {
+                            usersListWithDuplicates.Add(new UserViewModel
+                            {
+                                Id = user.Id,
+                                Username = user.Username,
+                                FirstName = user.FirstName,
+                                LastName = user.LastName,
+                                Email = user.Email,
+                                Password = user.Password,
+                            });
+                        }
+                    }
+
+                    List<UserViewModel> usersList = new List<UserViewModel>();
+                    foreach (var user in usersListWithDuplicates)
+                    {
+                        usersList.Add(user);
+                    }
+
+                    foreach (var user in usersListWithDuplicates)
+                    {
+                        int appearances = 0;
+                        foreach (var user2 in usersListWithDuplicates)
+                        {
+                            bool appearancesIncremented = false;
+                            if (user.Id == user2.Id)
+                            {
+                                appearances++;
+                                appearancesIncremented = true;
+                            }
+                            if (appearances > 1 && appearancesIncremented == true )
+                            {
+                                usersList.Remove(user2);
+                            }
+                        }
+                    }
+
+                    return View(usersList);
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+        }
     }
 }
