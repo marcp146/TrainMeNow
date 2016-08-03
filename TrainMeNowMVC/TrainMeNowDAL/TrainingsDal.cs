@@ -33,6 +33,15 @@ namespace TrainMeNowDAL
             }
         }
 
+        public void Create(string _Name, int? _TrainerId, decimal? _Price, int? _MaxUsers)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                ctx.Trainings.Add(new Training { Name = _Name, TrainerId = _TrainerId, Price = _Price, MaxUsers = _MaxUsers });
+                ctx.SaveChanges();
+            }
+        }
+
         public object getTrainings(int idDeProba)
         {
             throw new NotImplementedException();

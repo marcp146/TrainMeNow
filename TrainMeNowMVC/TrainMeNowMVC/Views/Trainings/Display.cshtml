@@ -8,7 +8,8 @@
 {
     <div class="well">
        
-        <h2>Training Name: @training.Name</h2>
+        <h2>Training Name: @training.Name</h2> 
+        @Html.ActionLink("View Details", "Details", new { controller = "Trainings", id = training.Id }, new { @class = "btn btn-success" })
        
     </div>
 }

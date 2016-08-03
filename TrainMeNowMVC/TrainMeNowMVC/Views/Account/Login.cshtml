@@ -6,18 +6,16 @@
 <h2>Login</h2>
 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
 {
-    <form>
-        <p>
-        Username: <input type="text" name="username" />
-        </p>
-            <br />
-        <p>
-        Password: <input type="password" name="password"/>
-        </p>  
-            <br/>
-        <p>
-        <input type="submit" value="Log in " onclick="Login"  />
-            </p>
-    </form>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" /></td>
+        </tr>
+    </table>
+        <input type="submit" value="Log in " onclick="Login"  class="btn btn-primary"/>
 }
 
