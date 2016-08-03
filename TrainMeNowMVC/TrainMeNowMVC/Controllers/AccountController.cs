@@ -53,7 +53,7 @@ namespace TrainMeNowMVC.Controllers
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
 
-
+                    
                     user.Password = model.Password;
                     user.RoleId = 3;
 
@@ -117,6 +117,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
+            
             var userinfo = new User();
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);
