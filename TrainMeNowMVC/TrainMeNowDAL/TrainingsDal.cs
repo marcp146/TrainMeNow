@@ -33,6 +33,11 @@ namespace TrainMeNowDAL
             }
         }
 
+        public object getTrainings(int idDeProba)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Training> getAllTrainings()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
