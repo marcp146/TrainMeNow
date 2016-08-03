@@ -71,6 +71,12 @@ namespace TrainMeNowMVC.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
