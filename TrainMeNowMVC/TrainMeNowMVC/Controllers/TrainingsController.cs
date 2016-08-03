@@ -27,6 +27,15 @@ namespace TrainMeNowMVC.Controllers
                 return View(trainings);
             }
 
+        }  
+
+        public ActionResult Details()
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trainings = ctx.Trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                return View(trainings);
+            }
         }
 
         public ActionResult BrowseByName(string id)
