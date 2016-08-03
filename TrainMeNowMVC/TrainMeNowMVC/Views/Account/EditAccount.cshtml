@@ -7,10 +7,24 @@
 <h2>EditAccount</h2>
 @using (Html.BeginForm("EditAccount", "Account", FormMethod.Post))
 {
-    <h3><label>First Name: </label> @Html.TextBoxFor(m => m.FirstName)</h3>
-            <h3><label>Last Name: </label> @Html.TextBoxFor(m => m.LastName)</h3>
-            <h3><label>Email: </label> @Html.TextBoxFor(m => m.Email)</h3>
-            <h3><label>Password: </label> @Html.TextBoxFor(m => m.Password)</h3>
-            <button type="submit" class="btn-success">Edit</button>
+    <table class="table">
+        <tr>
+            <td>First Name: </td>
+            <td>@Html.TextBoxFor(m => m.FirstName)</td>
+        </tr>
+        <tr>
+            <td>Last Name: </td>
+            <td>@Html.TextBoxFor(m => m.LastName)</td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td>@Html.TextBoxFor(m => m.Email)</td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td>@Html.TextBoxFor(m => m.Password)</td>
+        </tr>
 
+    </table>
+        <button type="submit" class="btn btn-primary">Edit</button>
 }
