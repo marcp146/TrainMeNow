@@ -36,7 +36,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public static List<User> getUsersById(int id)
+        public List<User> getUsersById(int id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
