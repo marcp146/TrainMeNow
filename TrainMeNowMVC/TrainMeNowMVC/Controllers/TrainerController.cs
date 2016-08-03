@@ -30,7 +30,7 @@ namespace TrainMeNowMVC.Controllers
             {
                 int idDeProba = 1;
                 //var trainingsList = ctx.Trainings.Where(t => t.TrainerId == idDeProba).ToList();
-                var trainingsList = new TrainingsDal().getTrainings(idDeProba).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                var trainingsList = new TrainingsDal().getTrainingsByTrainerId(idDeProba).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
 
                 List<OrderViewModel> ordersList = null;
                 foreach (var tr in trainingsList)
