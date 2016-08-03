@@ -26,9 +26,10 @@ namespace TrainMeNowMVC.Controllers
                 return View(trainings);
             }
 
-        }  
+        }
 
-        public ActionResult Details()
+        [HttpGet]
+        public ActionResult Details(int id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
