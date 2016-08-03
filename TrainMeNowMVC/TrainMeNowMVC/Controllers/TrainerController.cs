@@ -20,35 +20,66 @@ namespace TrainMeNowMVC.Controllers
 
         public ActionResult ListTrainees()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public JsonResult GetListTraineesData()
-        {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                int idDeProba = 1;
-                //var trainingsList = ctx.Trainings.Where(t => t.TrainerId == idDeProba).ToList();
-                var trainingsList = new TrainingsDal().getTrainingsByTrainerId(idDeProba).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
-
-                List<OrderViewModel> ordersList = null;
-                foreach (var tr in trainingsList)
+                if (Session["RoleId"] != null && (int)Session["RoleId"] == 2)
                 {
-                    //var ordersList2 = ctx.Orders.Where(o => o.TrainingID == tr.Id).ToList();
-                    var ordersList2 = new OrdersDAL().GetOrdersByID(tr.Id).Select(x => new OrderViewModel { Id = x.ID, UserId = x.UserID, TrainingId = x.TrainingID, PaymentId = x.PaymentID }).ToList();
-                    ordersList.AddRange(ordersList2);
-                }
+                    int currentTrainerID = (int)Session["User"];
+                    var trainingsList = new List<TrainingViewModel>();
+                    var trainingsDal = new TrainingsDal();
+                    foreach (var training in trainingsDal.getTrainingsByTrainerId(currentTrainerID))
+                    {
+                        trainingsList.Add(new TrainingViewModel
+                        {
+                            Id = training.Id,
+                            Name = training.Name,
+                            TrainerId = training.TrainerId,
+                            Price = training.Price,
+                            MaxUsers = training.MaxUsers
+                        });
+                    }
 
-                List<UserViewModel> usersList = null;
-                foreach (var or in ordersList)
+
+                    List<OrderViewModel> ordersList = new List<OrderViewModel>();
+                    var ordersDal = new OrdersDAL();
+                    foreach (var tr in trainingsList)
+                    {
+                        foreach (var order in ordersDal.GetOrdersByTrainingID(tr.Id))
+                        {
+                            ordersList.Add(new OrderViewModel
+                            {
+                                Id = order.ID,
+                                UserId = order.UserID,
+                                TrainingId = order.TrainingID,
+                                PaymentId = order.PaymentID
+                            });
+                        }
+                    }
+
+                    List<UserViewModel> usersList = new List<UserViewModel>();
+                    var usersDal = new UsersDAL();
+                    foreach (var or in ordersList)
+                    {
+                        foreach (var user in usersDal.getUsersById(or.UserId))
+                        {
+                            usersList.Add(new UserViewModel
+                            {
+                                Id = user.Id,
+                                Username = user.Username,
+                                FirstName = user.FirstName,
+                                LastName = user.LastName,
+                                Email = user.Email,
+                                Password = user.Password,
+                            });
+                        }
+                    }
+
+                    return View(usersList);
+                }
+                else
                 {
-                    //var usersList2 = ctx.Users.Where(u => u.Id == or.UserID).ToList();
-                    var usersList2 = new UsersDAL().getUsersById(or.Id).Select(x => new UserViewModel { Id = x.Id, Username = x.Username, FirstName = x.FirstName, LastName = x.LastName, Email = x.Email, Password = x.Password }).ToList();
-                    usersList.AddRange(usersList2);
+                    return RedirectToAction("Login", "Account");
                 }
-
-                return Json(usersList, JsonRequestBehavior.AllowGet);
             }
         }
     }
