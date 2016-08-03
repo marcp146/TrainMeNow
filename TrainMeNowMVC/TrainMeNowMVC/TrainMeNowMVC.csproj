@@ -284,6 +284,8 @@
     <Content Include="Views\Trainings\Display.cshtml" />
     <Content Include="Views\Trainings\BrowseByName.cshtml" />
     <Content Include="Views\Trainings\EditTraining.cshtml" />
+    <Content Include="Views\Trainings\Details.cshtml" />
+    <Content Include="Views\Trainings\CreateTraining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

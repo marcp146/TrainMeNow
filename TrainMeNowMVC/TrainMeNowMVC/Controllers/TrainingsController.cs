@@ -18,6 +18,22 @@ namespace TrainMeNowMVC.Controllers
             return View(trainingsList);
         }
 
+        [HttpGet]
+        public ActionResult CreateTraining()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateTrainingData(TrainingViewModel model)
+        {
+            TrainingsDal trn = new TrainingsDal();
+            model.TrainerId = (int)Session["User"];
+            trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
+
+            return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+        }
+
         public ActionResult Display()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
@@ -26,6 +42,16 @@ namespace TrainMeNowMVC.Controllers
                 return View(trainings);
             }
 
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trainings = ctx.Trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                return View(trainings);
+            }
         }
 
         public ActionResult BrowseByName(string id)
