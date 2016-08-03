@@ -22,6 +22,8 @@
 {
     @Html.ActionLink("Edit Account Info", "EditAccount", "Account");
     <br />
+    @Html.ActionLink("View My Trainings", "MyTrainings", "Trainings");
+    <br />
 
     if ((int)Session["RoleId"] == 1)
     {
@@ -37,7 +39,7 @@
     }
     else if ((int)Session["RoleId"] == 3)
     {
-        @Html.ActionLink("View My Trainings", "MyTrainings", "Trainings");
+        
     }
 
 
