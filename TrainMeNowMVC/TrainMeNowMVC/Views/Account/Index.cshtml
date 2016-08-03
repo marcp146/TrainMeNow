@@ -36,7 +36,7 @@
     else if ((int)Session["RoleId"] == 2)
     {
         @Html.ActionLink("Create Training", "CreateTraining", "Trainings");
-
+        <br />
         @Html.ActionLink("View Trainings", "TrainingsListByTrainerId", "Trainings");
     }
     else if ((int)Session["RoleId"] == 3)
