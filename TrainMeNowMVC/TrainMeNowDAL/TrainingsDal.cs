@@ -16,5 +16,13 @@ namespace TrainMeNowDAL
                 return trainingsList;
             }
         }
+        public List<Training> getAllTrainings()
+        {
+            using(var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trainingsList = ctx.Trainings.ToList();
+                return trainingsList;
+            } 
+        }
     }
 }

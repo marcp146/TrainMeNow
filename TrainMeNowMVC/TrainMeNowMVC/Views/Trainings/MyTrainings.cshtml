@@ -1,0 +1,35 @@
+﻿@model List<TrainMeNowMVC.Models.OrdersViewModel>
+@{
+    ViewBag.Title = "MyTrainings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h2>Currently Enrolled Trainings</h2>
+</div>
+<table>
+    <tr>
+        <th>
+            Training Name
+        </th>
+        <th>
+            Trainer Name
+        </th>
+        <th>
+            Training Description
+        </th>
+    </tr>
+
+
+    @foreach (var list in Model)
+    {
+        <tr>
+            <td>
+                @list.Name
+            </td>
+
+            <td>
+                @list.Trainer
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,40 @@
+﻿@model List<TrainMeNowMVC.Models.TrainingViewModel>
+@{
+    ViewBag.Title = "TrainingList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Training List</h2>
+<!--<table class="table" id="trainingsTable">            TABELU NU MERGE
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Trainer Id</th>
+            <th>Price</th>
+            <th>Max Users</th>
+        </tr>
+    </tbody>
+</table>
+    -->
+
+@foreach(var training in Model)
+{
+    <!--
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        $('#trainingsTable tbody').append("<tr><td>@training.Id</td><td>@training.Name</td><td>@training.TrainerId</td><td>@training.Price</td><td>@training.MaxUsers</td></tr>");
+    </script>
+        -->
+   
+    <div class="list-group">
+        Id: @training.Id
+        Name: @training.Name
+        Trainer Id: @training.TrainerId
+        Price: @training.Price
+        Max Users: @training.MaxUsers
+    </div>
+       
+
+}
+
+
