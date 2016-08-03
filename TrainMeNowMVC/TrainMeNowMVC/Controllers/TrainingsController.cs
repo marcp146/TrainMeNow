@@ -18,6 +18,22 @@ namespace TrainMeNowMVC.Controllers
             return View(trainingsList);
         }
 
+        [HttpGet]
+        public ActionResult CreateTraining()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateTrainingData(TrainingViewModel model)
+        {
+            TrainingsDal trn = new TrainingsDal();
+            model.TrainerId = (int)Session["User"];
+            trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
+
+            return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+        }
+
         public ActionResult Display()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
