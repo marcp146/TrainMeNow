@@ -52,7 +52,7 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
-            public ActionResult MyTrainings()
+            public ActionResult EnrolledTrainings()
         {
             if (Session["User"] != null)
             {
