@@ -12,9 +12,10 @@ namespace TrainMeNowMVC.Controllers
     public class TrainingsController : Controller
     {
         // GET: Trainings
-        public ActionResult TrainingsListByTrainerId(int? id)
+        public ActionResult TrainingsListByTrainerId()
         {
-            var trainingsList = new TrainingsDal().getTrainingsByTrainerId(id).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+            int nr = (int)Session["User"];
+            var trainingsList = new TrainingsDal().getTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
             return View(trainingsList);
         }
 
@@ -31,7 +32,7 @@ namespace TrainMeNowMVC.Controllers
             model.TrainerId = (int)Session["User"];
             trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
 
-            return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+            return RedirectToAction("TrainingsListByTrainerId");
         }
 
         public ActionResult Display()
@@ -106,7 +107,7 @@ namespace TrainMeNowMVC.Controllers
                 rezmodel.MaxUsers = rez.MaxUsers;
                 return View(rezmodel);
             }
-            return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+            return RedirectToAction("TrainingsListByTrainerId");
         }
 
         [HttpGet]
@@ -114,11 +115,11 @@ namespace TrainMeNowMVC.Controllers
         {
             if ((new TrainingsDal().EditTraining(p.Id, p.Price, p.MaxUsers)) == true)
             {
-                return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+                return RedirectToAction("TrainingsListByTrainerId");
             }
             else
             {
-                return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+                return RedirectToAction("TrainingsListByTrainerId");
             }
         }
     }
