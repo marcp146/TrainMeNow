@@ -7,24 +7,48 @@
 
 @using (@Html.BeginForm("Register", "Account", FormMethod.Post))
 {
-    <label> Username:</label>
-    @Html.TextBoxFor(m => m.Username)
-    <br />
-    <label> First Name:</label>
-    @Html.TextBoxFor(m => m.FirstName)
-
-    <br />
-    <label> Last Name:</label>
-    @Html.TextBoxFor(m => m.LastName)
-
-    <br />
-    <label> Email:</label>
-    @Html.TextBoxFor(m => m.Email)
-
-    <br />
-    <label> Password:</label>
-    @Html.TextBoxFor(m => m.Password, new { @type = "password" })
-
-    <br />
+    <table>
+        <tr>
+            <td>
+                <label> Username:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Username)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> First Name:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> Last Name:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> Email:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> Password:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Password, new { @type = "password" })
+            </td>
+        </tr>
+    </table>
+    
     <button type="submit" class="btn btn-success">Submit</button>
 }
