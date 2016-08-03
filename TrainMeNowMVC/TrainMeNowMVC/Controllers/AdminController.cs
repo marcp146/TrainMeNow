@@ -32,7 +32,8 @@ namespace TrainMeNowMVC.Controllers
         }
         public ActionResult TrainingList()
         {
-            return View();
+            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+            return View(trainingList);
         }
     }
 }
