@@ -164,7 +164,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrdersViewModel.cs" />
+    <Compile Include="Models\UserTrainingsViewModel.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\TrainingViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -273,9 +273,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Login.cshtml" />
-    <Content Include="Views\Brws\Display.cshtml" />
     <Content Include="Views\Account\EditAccount.cshtml" />
-    <Content Include="Views\Brws\Display.cshtml" />
     <Content Include="Views\Trainings\TrainingsListByTrainerId.cshtml" />
     <Content Include="Views\Trainings\MyTrainings.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />

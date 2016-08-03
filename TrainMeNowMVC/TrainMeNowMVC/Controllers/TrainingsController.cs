@@ -48,14 +48,14 @@ namespace TrainMeNowMVC.Controllers
         {
             if (Session["User"] != null)
             {
-                List<OrdersViewModel> orderslist = new List<OrdersViewModel>();
+                List<UserTrainingsViewModel> orderslist = new List<UserTrainingsViewModel>();
                 using (var ctx = new Internship2016NetTrainMeNowEntities())
                 {
                     var user = ctx.Users.Find((int)Session["User"]);
                     var myTrainingList = user.Orders;
                     foreach (Order ord in myTrainingList)
                     {
-                        orderslist.Add(new OrdersViewModel { Id = ord.ID, Name = ord.Training.Name, Trainer = ord.Training.User.FirstName + " " + ord.Training.User.LastName });
+                        orderslist.Add(new UserTrainingsViewModel { Id = ord.ID, Name = ord.Training.Name, Trainer = ord.Training.User.FirstName + " " + ord.Training.User.LastName,Email=ord.Training.User.Email });
                     }
                 }
                 return View(orderslist);

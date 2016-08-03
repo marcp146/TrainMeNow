@@ -17,18 +17,27 @@ namespace TrainMeNowMVC.Controllers
 
         public ActionResult TrainerList()
         {
-            var trainers = new List<UserViewModel>();
-            foreach (var user in UsersDAL.getUsersByRole(2))
+            if (Session["RoleId"] != null && (int)Session["RoleId"] == 1)
             {
-                trainers.Add(new UserViewModel
+                var trainers = new List<UserViewModel>();
+                foreach (var user in UsersDAL.getUsersByRole(2))
                 {
-                    Email = user.Email,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Username = user.Username
-                });
+                    trainers.Add(new UserViewModel
+                    {
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Username = user.Username
+                    });
+                }
+                return View(trainers);
             }
-            return View(trainers);
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+
         }
         public ActionResult TrainingList()
         {

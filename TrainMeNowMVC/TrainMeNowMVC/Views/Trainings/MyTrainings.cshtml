@@ -1,4 +1,4 @@
-﻿@model List<TrainMeNowMVC.Models.OrdersViewModel>
+﻿@model List<TrainMeNowMVC.Models.UserTrainingsViewModel>
 @{
     ViewBag.Title = "MyTrainings";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,7 @@
 <div>
     <h2>Currently Enrolled Trainings</h2>
 </div>
-<table>
+<table class="table table-striped">
     <tr>
         <th>
             Training Name
@@ -16,6 +16,9 @@
         </th>
         <th>
             Training Description
+        </th>
+        <th>
+            Contact
         </th>
     </tr>
 
@@ -29,6 +32,12 @@
 
             <td>
                 @list.Trainer
+            </td>
+            <td>
+                Aici vine descriptionu
+            </td>
+            <td>
+                @list.Email
             </td>
         </tr>
     }
