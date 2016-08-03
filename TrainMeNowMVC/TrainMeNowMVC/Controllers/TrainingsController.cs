@@ -14,9 +14,15 @@ namespace TrainMeNowMVC.Controllers
         // GET: Trainings
         public ActionResult TrainingsListByTrainerId()
         {
-            int nr = (int)Session["User"];
-            var trainingsList = new TrainingsDal().getTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
-            return View(trainingsList);
+            if (Session["User"] != null)
+            {
+                int nr = (int)Session["User"];
+                var trainingsList = new TrainingsDal().getTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                return View(trainingsList);
+            }else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [HttpGet]
@@ -35,11 +41,18 @@ namespace TrainMeNowMVC.Controllers
         [HttpGet]
         public ActionResult CreateTrainingData(TrainingViewModel model)
         {
-            TrainingsDal trn = new TrainingsDal();
-            model.TrainerId = (int)Session["User"];
-            trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
 
-            return RedirectToAction("TrainingsListByTrainerId");
+            if (Session["User"] != null)
+            {
+                TrainingsDal trn = new TrainingsDal();
+                model.TrainerId = (int)Session["User"];
+                trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
+
+                return RedirectToAction("TrainingsListByTrainerId");
+            }else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         public ActionResult Display()
