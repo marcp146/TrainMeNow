@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainMeNowDAL
 {
-    class OrdersDAL
+    public class OrdersDAL
     {
         protected Internship2016NetTrainMeNowEntities Context { get; set; }
 
@@ -43,12 +43,21 @@ namespace TrainMeNowDAL
 
         public void Delete(int Id)
         {
-            Context.Orders.Remove(GetByID(Id));
+            Context.Orders.Remove(GetOrderByID(Id));
         }
 
-        public Order GetByID(int id)
+        public Order GetOrderByID(int id)
         {
             return Context.Orders.Find(id);
+        }
+
+        public List<Order> GetOrdersByID(int id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var ordersList = ctx.Orders.Where(x => x.ID == id).ToList();
+                return ordersList;
+            }
         }
     }
 }
