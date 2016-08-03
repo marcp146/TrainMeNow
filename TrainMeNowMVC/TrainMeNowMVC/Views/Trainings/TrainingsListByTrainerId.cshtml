@@ -1,17 +1,53 @@
-﻿@model List<TrainMeNowMVC.Models.TrainingViewModel>
+﻿@model IEnumerable<TrainMeNowMVC.Models.TrainingViewModel>
 @{
     ViewBag.Title = "TrainingsListByTrainerId";
 }
 
-<h2>Trainings List</h2>
-@foreach (var training in Model)
-{
-    <div class="well">
-        <h2>Id: @training.Id</h2>
-        <h2>Name: @training.Name</h2>
-        <h3>Trainer Id: @training.TrainerId</h3>
-        <h2>Price: @training.Price</h2>
-        <h3>MaxUsers: @training.MaxUsers</h3>
-    </div>
-}
+<h2>Trainings List:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxUsers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </th>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxUsers)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Trainings", "EditTraining", new { controller = "Trainings", id = item.Id }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+        }
+
+    </table>
+
+
+
 

@@ -53,7 +53,7 @@ namespace TrainMeNowMVC.Controllers
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
 
-
+                    
                     user.Password = model.Password;
                     user.RoleId = 3;
 
@@ -71,6 +71,12 @@ namespace TrainMeNowMVC.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
@@ -117,6 +123,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
+            
             var userinfo = new User();
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);
@@ -143,14 +150,14 @@ namespace TrainMeNowMVC.Controllers
         {
             if (Session["User"] != null)
             {
-                List<OrdersViewModel> orderslist = new List<OrdersViewModel>();
+                List<UserTrainingsViewModel> orderslist = new List<UserTrainingsViewModel>();
                 using (var ctx = new Internship2016NetTrainMeNowEntities())
                 {
                     var user = ctx.Users.Find((int)Session["User"]);
                     var myTrainingList = user.Orders;
                     foreach (Order ord in myTrainingList)
                     {
-                        orderslist.Add(new OrdersViewModel { Id = ord.ID, Name = ord.Training.Name, Trainer = ord.Training.User.FirstName + " " + ord.Training.User.LastName });
+                        orderslist.Add(new UserTrainingsViewModel { Id = ord.ID, Name = ord.Training.Name, Trainer = ord.Training.User.FirstName + " " + ord.Training.User.LastName });
                     }
                 }
                 return View(orderslist);
