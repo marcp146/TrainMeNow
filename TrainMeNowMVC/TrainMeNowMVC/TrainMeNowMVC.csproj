@@ -283,6 +283,7 @@
     <Content Include="Views\Trainings\Display.cshtml" />
     <Content Include="Views\Trainings\BrowseByName.cshtml" />
     <Content Include="Views\Trainings\EditTraining.cshtml" />
+    <Content Include="Views\Trainings\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
