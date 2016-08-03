@@ -22,7 +22,14 @@ namespace TrainMeNowMVC.Controllers
         [HttpGet]
         public ActionResult CreateTraining()
         {
-            return View();
+            if (Session["User"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [HttpGet]
@@ -95,19 +102,26 @@ namespace TrainMeNowMVC.Controllers
         [HttpGet]
         public ActionResult EditTraining(int id)
         {
-            var rez = new TrainingsDal().GetTrainingById(id);
-            if (rez != null)
+            if (Session["User"] != null)
             {
+                var rez = new TrainingsDal().GetTrainingById(id);
+                if (rez != null)
+                {
 
-                var rezmodel = new TrainingViewModel();
-                rezmodel.Id = rez.Id;
-                rezmodel.Name = rez.Name;
-                rezmodel.TrainerId = rez.TrainerId;
-                rezmodel.Price = rez.Price;
-                rezmodel.MaxUsers = rez.MaxUsers;
-                return View(rezmodel);
+                    var rezmodel = new TrainingViewModel();
+                    rezmodel.Id = rez.Id;
+                    rezmodel.Name = rez.Name;
+                    rezmodel.TrainerId = rez.TrainerId;
+                    rezmodel.Price = rez.Price;
+                    rezmodel.MaxUsers = rez.MaxUsers;
+                    return View(rezmodel);
+                }
+                return RedirectToAction("TrainingsListByTrainerId");
             }
-            return RedirectToAction("TrainingsListByTrainerId");
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [HttpGet]
