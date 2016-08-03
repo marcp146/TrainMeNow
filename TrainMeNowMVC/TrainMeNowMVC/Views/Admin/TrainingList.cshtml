@@ -5,18 +5,37 @@
 }
 
 <h2>Training List</h2>
+<table class="table table-hover">
+    <tr>
+        <th width="25%">Id</th>
+        <th width="25%">Name  </th>
+        <th width="25%">Trainer Id  </th>
+        <th width="25%">Price   </th>
+        <th width="25%">Max Users   </th>
+    </tr>
+    @foreach (var trainer in Model)
+    {
+        <tr>
+            <td>@trainer.Id</td>
+            <td>@trainer.Name</td>
+            <td>@trainer.TrainerId</td>
+            <td>@trainer.Price</td>
+            <td>@trainer.MaxUsers</td>
+        </tr>
+    }
+</table>
 
 
-@foreach (var training in Model)
-{
-    <div class="table" >
-        Id: @training.Id
-        Name: @training.Name
-        Trainer Id: @training.TrainerId
-        Price: @training.Price
-        Max Users: @training.MaxUsers
-    </div>
-}
+    @*@foreach (var training in Model)
+    {
+        <div class="table">
+            Id: @training.Id
+            Name: @training.Name
+            Trainer Id: @training.TrainerId
+            Price: @training.Price
+            Max Users: @training.MaxUsers
+        </div>
+    }*@
 
 
 
