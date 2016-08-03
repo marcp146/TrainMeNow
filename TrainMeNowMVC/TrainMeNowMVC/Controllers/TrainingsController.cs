@@ -14,9 +14,8 @@ namespace TrainMeNowMVC.Controllers
         // GET: Trainings
         public ActionResult TrainingsListByTrainerId(int? id)
         {
-            var trainingsList = new TrainingsDal().getTrainings(id).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
-            return View(trainingsList); 
-        
+            var trainingsList = new TrainingsDal().getTrainingsByTrainerId(id).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+            return View(trainingsList);
         }
 
         public ActionResult Display()
@@ -65,7 +64,36 @@ namespace TrainMeNowMVC.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+        [HttpGet]
+        public ActionResult EditTraining(int id)
+        {
+            var rez = new TrainingsDal().GetTrainingById(id);
+            if (rez != null)
+            {
 
+                var rezmodel = new TrainingViewModel();
+                rezmodel.Id = rez.Id;
+                rezmodel.Name = rez.Name;
+                rezmodel.TrainerId = rez.TrainerId;
+                rezmodel.Price = rez.Price;
+                rezmodel.MaxUsers = rez.MaxUsers;
+                return View(rezmodel);
+            }
+            return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+        }
+
+        [HttpGet]
+        public ActionResult EditTrainingData(TrainingViewModel p)
+        {
+            if ((new TrainingsDal().EditTraining(p.Id, p.Price, p.MaxUsers)) == true)
+            {
+                return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+            }
+            else
+            {
+                return RedirectToAction("TrainingsListByTrainerId", new { id = (int)Session["User"] });
+            }
+        }
     }
 
 

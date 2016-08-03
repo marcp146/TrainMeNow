@@ -53,7 +53,7 @@ namespace TrainMeNowMVC.Controllers
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
 
-
+                    
                     user.Password = model.Password;
                     user.RoleId = 3;
 
@@ -71,6 +71,12 @@ namespace TrainMeNowMVC.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
@@ -117,6 +123,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
+            
             var userinfo = new User();
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);
