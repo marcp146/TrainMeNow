@@ -100,6 +100,7 @@ namespace TrainMeNowMVC.Controllers
 
             return View();
         }
+        
         [HttpGet]
         public ActionResult EditAccount()
         {
