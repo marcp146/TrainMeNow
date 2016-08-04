@@ -39,25 +39,14 @@ namespace TrainMeNowMVC.Controllers
             {
                 try
                 {
-
-                    Random rnd = new Random();
                     var user = new User();
-                    user.Id = rnd.Next(100000); ;
                     user.Username = model.Username;
                     user.Email = model.Email;
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
-
-                    //using (MD5 md5 = MD5.Create())
-                    //{
-                    //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
-                    //}
-                    
-                    
                     user.Password = GenerateHash(model.Password);
                     user.RoleId = 3;
                    
-
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
