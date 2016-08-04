@@ -5,6 +5,8 @@ using TrainMeNowMVC.Models;
 using TrainMeNowDAL;
 using TrainMeNowMVC.CustomAuthorize;
 using System;
+using System.Web;
+using System.Web.Security;
 
 namespace TrainMeNowMVC.Controllers
 {

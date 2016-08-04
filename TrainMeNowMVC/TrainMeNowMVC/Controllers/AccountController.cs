@@ -52,10 +52,11 @@ namespace TrainMeNowMVC.Controllers
                     //{
                     //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
                     //}
-
+                    
                     
                     user.Password = model.Password;
                     user.RoleId = 3;
+                   
 
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
