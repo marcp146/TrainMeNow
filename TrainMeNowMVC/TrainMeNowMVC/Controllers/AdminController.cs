@@ -5,6 +5,8 @@ using TrainMeNowMVC.Models;
 using TrainMeNowDAL;
 using TrainMeNowMVC.CustomAuthorize;
 using System;
+using System.Web;
+using System.Web.Security;
 
 namespace TrainMeNowMVC.Controllers
 {
@@ -83,9 +85,12 @@ namespace TrainMeNowMVC.Controllers
             return View(model);
         }
 
+        [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult TrainingList()
         {
-            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel { Id = x.Id,
+                Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers,
+                TrainerName =(new UsersDAL().getUser((int)x.TrainerId).FirstName +" "+ new UsersDAL().getUser((int)x.TrainerId).LastName)}).ToList();
             return View(trainingList);
         }
 

@@ -85,6 +85,9 @@
     <Compile Include="User.cs">
       <DependentUpon>TrainMeNowModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="WishList.cs">
+      <DependentUpon>TrainMeNowModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="TrainMeNowModel.edmx">
