@@ -12,6 +12,7 @@ namespace TrainMeNowMVC.Controllers
     public class TrainingsController : Controller
     {
         // GET: Trainings
+        [CustomAuthorize.CustomAuthorize(2)]
         public ActionResult TrainingsListByTrainerId()
         {
             if (Session["User"] != null)
@@ -28,6 +29,7 @@ namespace TrainMeNowMVC.Controllers
         }
 
         [HttpGet]
+        [CustomAuthorize.CustomAuthorize(2)]
         public ActionResult CreateTraining()
         {
             if (Session["User"] != null)
@@ -39,7 +41,7 @@ namespace TrainMeNowMVC.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
-
+        [CustomAuthorize.CustomAuthorize(2)]
         [HttpGet]
         public ActionResult CreateTrainingData(TrainingViewModel model)
         {
@@ -58,6 +60,7 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
+       
         public ActionResult Display()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
@@ -79,7 +82,8 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
-        [HttpGet] 
+        [HttpGet]
+        [CustomAuthorize.CustomAuthorize(1,2,3)]
         public ActionResult Buy(int id)
         {
             if (Session["User"] != null)
@@ -108,6 +112,7 @@ namespace TrainMeNowMVC.Controllers
                 return View();
         }
 
+
         public ActionResult BrowseByName(string id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
@@ -123,7 +128,8 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
-            public ActionResult EnrolledTrainings()
+        [CustomAuthorize.CustomAuthorize(1,2,3)]
+        public ActionResult EnrolledTrainings()
         {
             if (Session["User"] != null)
             {
@@ -144,6 +150,8 @@ namespace TrainMeNowMVC.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
+
+        [CustomAuthorize.CustomAuthorize(2)]
         [HttpGet]
         public ActionResult EditTraining(int id)
         {
@@ -179,6 +187,7 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
+        [CustomAuthorize.CustomAuthorize(2)]
         [HttpGet]
         public ActionResult EditTrainingData(TrainingViewModel p)
         {
