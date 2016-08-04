@@ -21,12 +21,20 @@
             <td>@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })</td>
         </tr>
         <tr>
-            <td>Password: </td>
+            <td>Adress: </td>
             <td>
-                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+            </td>
+
+        </tr>
+        <tr>
+            <td>Phone: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
             </td>
 
         </tr>
     </table>
     <button type="submit" class="btn btn-primary">Edit</button>
+    @Html.ActionLink("Change Password", "ChangePass" ,new {controller = "Account" }, new { @class = "btn btn-primary" })
 }

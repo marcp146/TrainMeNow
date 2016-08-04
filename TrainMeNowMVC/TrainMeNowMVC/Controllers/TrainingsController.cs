@@ -110,6 +110,32 @@ namespace TrainMeNowMVC.Controllers
             }
 
                 return View();
+        } 
+
+        public ActionResult BrowseByLanguage(string id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                
+                var trainingList= ctx.Trainings.Where(x => x.Language== id).ToList();
+                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                return View(trainings);
+            }
+
+                
+        }
+
+        public ActionResult BrowseByCategory(string id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+
+                var trainingList = ctx.Trainings.Where(x => x.Name == id).ToList();
+                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                return View(trainings);
+            }
+
+
         }
 
 
@@ -126,6 +152,12 @@ namespace TrainMeNowMVC.Controllers
                 return View(trainingList);
 
             }
+        }  
+
+        public ActionResult Browse(string id)
+        {
+
+            return View(id);
         }
 
         [CustomAuthorize.CustomAuthorize(1,2,3)]

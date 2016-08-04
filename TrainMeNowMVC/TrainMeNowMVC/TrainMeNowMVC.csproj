@@ -288,6 +288,8 @@
     <Content Include="Views\Trainings\CreateTraining.cshtml" />
     <Content Include="Views\Admin\ManageTrainers.cshtml" />
     <Content Include="Views\Admin\TraineesList.cshtml" />
+    <Content Include="Views\Trainings\BrowseByLanguage.cshtml" />
+    <Content Include="Views\Trainings\BrowseByCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
