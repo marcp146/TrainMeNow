@@ -1,0 +1,18 @@
+﻿@model List<TrainMeNowMVC.Models.TrainingViewModel>
+@{
+    ViewBag.Title = "BrowseByLanguage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BrowseByLanguage</h2>
+@foreach (var training in Model)
+{
+    <div class="well">
+        <h2>Id: @training.Id</h2>
+        <h2>Name: @training.Name</h2>
+        <h3>Trainer Id: @training.TrainerId</h3>
+        <h2>Price: @training.Price</h2>
+        <h3>Maximum Users: @training.MaxUsers</h3>
+    </div>
+}
+

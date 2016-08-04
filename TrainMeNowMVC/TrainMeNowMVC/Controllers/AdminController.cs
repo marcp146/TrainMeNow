@@ -13,11 +13,12 @@ namespace TrainMeNowMVC.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+        [CustomAuthorize.CustomAuthorize(1,2,3)]
         public ActionResult Index()
         {
             return View();
         }
-
+        [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult TrainerList()
         {
             if (Session["RoleId"] != null && (int)Session["RoleId"] == 1)
@@ -42,7 +43,7 @@ namespace TrainMeNowMVC.Controllers
 
 
         }
-
+        [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult ManageTrainers()
         {
             if (Session["User"] != null && (int)Session["RoleId"] == 1)
@@ -77,11 +78,10 @@ namespace TrainMeNowMVC.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult ManageTrainers(List<UserViewModel> model)
         {
-
-
-
+            
             return View(model);
         }
 
@@ -96,7 +96,7 @@ namespace TrainMeNowMVC.Controllers
 
 
 
-
+        [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult TraineesList()
         {
             const int adminRoleID = 1;
