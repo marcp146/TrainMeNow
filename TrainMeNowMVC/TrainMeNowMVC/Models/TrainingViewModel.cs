@@ -8,7 +8,6 @@ namespace TrainMeNowMVC.Models
 {
     public class TrainingViewModel
     {
-        [Key]
         public int Id { get; set; } 
         public string Name { get; set; } 
         public int TrainerId { get; set; } 

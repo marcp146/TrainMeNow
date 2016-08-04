@@ -14,6 +14,7 @@ namespace TrainMeNowMVC.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+
         public ActionResult Index()
         {
             if (Session["User"] != null)
@@ -46,21 +47,16 @@ namespace TrainMeNowMVC.Controllers
                     user.LastName = model.LastName;
                     user.Password = CalculateMD5Hash(model.Password);
                     user.RoleId = 3;
-                   
-
+                    
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
                 catch (Exception e)
                 {
                     Debug.WriteLine(e.StackTrace);
-
                 }
-
             }
-
             return RedirectToAction("Index", "Home");
-
         }
 
 
@@ -112,7 +108,7 @@ namespace TrainMeNowMVC.Controllers
                     {
                         Session["User"] = u.Id;
                         Session["RoleId"] = u.RoleId;
-                       
+
 
                         return RedirectToAction("Index", "Home");
                     }
@@ -122,7 +118,7 @@ namespace TrainMeNowMVC.Controllers
 
             return View();
         }
-        
+
         [HttpGet]
         public ActionResult EditAccount()
         {
@@ -146,7 +142,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult EditAccount(UserViewModel model)
         {
-            
+
             var userinfo = new User();
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);

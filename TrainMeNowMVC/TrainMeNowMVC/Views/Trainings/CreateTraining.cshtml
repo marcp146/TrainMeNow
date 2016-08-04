@@ -8,20 +8,48 @@
 
 @using (Html.BeginForm("CreateTrainingData", "Trainings", FormMethod.Get))
 {
-    <label>Name:</label>
-    @Html.TextBoxFor(m => m.Name)
-
-    <label>Price: </label>
-    @Html.TextBoxFor(m => m.Price)
-
-    <label>MaxUsers:</label>
-    @Html.TextBoxFor(m => m.MaxUsers)
-
-    <label>Language:</label>
-    @Html.TextBoxFor(m => m.Language)
-
-    <label>Description:</label>
-    @Html.TextBoxFor(m => m.Description)
+    <table>
+        <tr>
+            <td>
+                <label> Name:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Price:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>MaxUsers:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.MaxUsers, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Language:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Language, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Description:</label>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            </td>
+        </tr>
+    </table>
 
     <button class="btn btn-success" type="submit">Submit</button>
 }
