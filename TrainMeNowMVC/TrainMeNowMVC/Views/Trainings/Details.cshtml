@@ -7,14 +7,17 @@
 <h2>Details</h2>
 
 @foreach (var training in Model)
-{
+{   
+
     <div class="well">
 
-        <h2>Training Id: @training.Id</h2> 
+        <h3>Training Id: @training.Id</h3> 
         <h3>Training Name: @training.Name</h3> 
         <h3>Trainer Id: @training.TrainerId</h3> 
-        <h4>Training Price:@training.Price</h4> 
-        <h4>Training MaxUsers:@training.MaxUsers</h4>  
+        <h3>Training Price:@training.Price</h3> 
+        <h3>Training MaxUsers:@training.MaxUsers</h3>   
+
+        @Html.ActionLink("Place order", "Buy", new { controller = "Trainings", id = training.Id }, new { @class = "btn btn-success" })
 
        
 

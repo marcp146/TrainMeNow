@@ -18,16 +18,16 @@
 <h2>@ViewBag.Title</h2>
 
 
-@using (@Html.BeginForm("Register", "Account", FormMethod.Post))
+@using (@Html.BeginForm("Index", "Account", FormMethod.Get))
 {
     @Html.ActionLink("Edit Account Info", "EditAccount", "Account");
     <br />
-    @Html.ActionLink("View My Trainings", "MyTrainings", "Trainings");
+    @Html.ActionLink("View Enroled Trainings", "EnrolledTrainings", "Trainings");
     <br />
 
     if ((int)Session["RoleId"] == 1)
     {
-        @Html.ActionLink("Manage Trainers", "EditAccount", "Admin");
+        @Html.ActionLink("Manage Trainers", "ManageTrainers", "Admin");
         <br />
         @Html.ActionLink("View Trainers", "TrainerList", "Admin");
         <br /><br />
@@ -35,11 +35,13 @@
     }
     else if ((int)Session["RoleId"] == 2)
     {
-        @Html.ActionLink("Create Training", "CEVA", "Trainer");
+        @Html.ActionLink("Create Training", "CreateTraining", "Trainings");
+        <br />
+        @Html.ActionLink("View Trainings", "TrainingsListByTrainerId", "Trainings");
     }
     else if ((int)Session["RoleId"] == 3)
     {
-        
+
     }
 
 

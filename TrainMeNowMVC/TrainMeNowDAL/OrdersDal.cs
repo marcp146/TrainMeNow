@@ -59,5 +59,14 @@ namespace TrainMeNowDAL
                 return ordersList;
             }
         }
+
+        public List<Order> GetOrdersByTrainingID(int id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var ordersList = ctx.Orders.Where(x => x.TrainingID == id).ToList();
+                return ordersList;
+            }
+        }
     }
 }
