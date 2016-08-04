@@ -10,21 +10,23 @@
     <table class="table">
         <tr>
             <td>First Name: </td>
-            <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            <td>@Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })</td>
         </tr>
         <tr>
             <td>Last Name: </td>
-            <td>@Html.TextBoxFor(m => m.LastName)</td>
+            <td>@Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })</td>
         </tr>
         <tr>
             <td>Email: </td>
-            <td>@Html.TextBoxFor(m => m.Email)</td>
+            <td>@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })</td>
         </tr>
         <tr>
             <td>Password: </td>
-            <td>@Html.TextBoxFor(m => m.Password)</td>
-        </tr>
+            <td>
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            </td>
 
+        </tr>
     </table>
-        <button type="submit" class="btn btn-primary">Edit</button>
+    <button type="submit" class="btn btn-primary">Edit</button>
 }
