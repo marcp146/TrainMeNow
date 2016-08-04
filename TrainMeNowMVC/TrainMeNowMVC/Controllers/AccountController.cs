@@ -100,7 +100,7 @@ namespace TrainMeNowMVC.Controllers
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
-            var password = GenerateHash(model.Password);
+            var password = CalculateMD5Hash(model.Password);
 
             List<User> listaUseri = UsersDAL.getUsers();
             if (username != null)
