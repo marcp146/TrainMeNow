@@ -47,6 +47,7 @@ namespace TrainMeNowMVC.Controllers
                     user.Password = CalculateMD5Hash(model.Password);
                     user.RoleId = 3;
                    
+
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
