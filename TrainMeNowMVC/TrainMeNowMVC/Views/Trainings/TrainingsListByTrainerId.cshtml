@@ -18,6 +18,21 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrolledUsers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfRationgs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
         @foreach (var item in Model)
         {
         <tr>
@@ -25,10 +40,25 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.MaxUsers)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaxUsers)
+                @Html.DisplayFor(model => item.EnrolledUsers)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NumberOfRationgs)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Description)
             </td>
             <td>
                 @Html.ActionLink("Edit Trainings", "EditTraining", new { controller = "Trainings", id = item.Id }, new { @class = "btn btn-info" })

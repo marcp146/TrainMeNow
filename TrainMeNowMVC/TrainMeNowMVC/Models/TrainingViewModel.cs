@@ -15,5 +15,10 @@ namespace TrainMeNowMVC.Models
         public decimal Price { get; set; } 
         public int MaxUsers { get; set; }
         public string TrainerName { get; set; }
+        public int EnrolledUsers { get; set; }
+        public string Language { get; set; }
+        public string Description { get; set; }
+        public int Rating { get; set; }
+        public int NumberOfRationgs { get; set; }
     }
 }

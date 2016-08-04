@@ -47,7 +47,7 @@ namespace TrainMeNowMVC.Controllers
             {
                 TrainingsDal trn = new TrainingsDal();
                 model.TrainerId = (int)Session["User"];
-                trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
+                trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers,model.Description,model.Language);
 
                 return RedirectToAction("TrainingsListByTrainerId");
             }
@@ -159,6 +159,11 @@ namespace TrainMeNowMVC.Controllers
                         rezmodel.TrainerId = rez.TrainerId;
                         rezmodel.Price = rez.Price;
                         rezmodel.MaxUsers = rez.MaxUsers;
+                        rezmodel.Description = rez.Description;
+                        rezmodel.Language = rez.Language;
+                        rezmodel.NumberOfRationgs = rez.NumberOfRationgs;
+                        rezmodel.Rating = rez.Rating;
+                        rezmodel.EnrolledUsers = rez.EnrolledUsers;
                         return View(rezmodel);
                     }else
                     {
@@ -176,7 +181,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpGet]
         public ActionResult EditTrainingData(TrainingViewModel p)
         {
-            if ((new TrainingsDal().EditTraining(p.Id, p.Price, p.MaxUsers)) == true)
+            if ((new TrainingsDal().EditTraining(p.Id, p.Price, p.MaxUsers,p.Description,p.Language)) == true)
             {
                 return RedirectToAction("TrainingsListByTrainerId");
             }
