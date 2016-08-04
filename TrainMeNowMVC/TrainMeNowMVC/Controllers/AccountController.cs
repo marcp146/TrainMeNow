@@ -149,7 +149,6 @@ namespace TrainMeNowMVC.Controllers
             var userdal = new UsersDAL();
             userinfo = userdal.getUser((int)Session["User"]);
             userinfo.Email = model.Email;
-            userinfo.Password = model.Password;
             userinfo.FirstName = model.FirstName;
             userinfo.LastName = model.LastName;
             userinfo.Address = model.Adress;
