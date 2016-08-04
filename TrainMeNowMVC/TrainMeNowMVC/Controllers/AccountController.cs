@@ -54,7 +54,7 @@ namespace TrainMeNowMVC.Controllers
                     //}
                     
                     
-                    user.Password = model.Password;
+                    user.Password = GenerateHash(model.Password);
                     user.RoleId = 3;
                    
 
