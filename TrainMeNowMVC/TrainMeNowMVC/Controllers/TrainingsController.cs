@@ -120,14 +120,19 @@ namespace TrainMeNowMVC.Controllers
                 var rez = new TrainingsDal().GetTrainingById(id);
                 if (rez != null)
                 {
-
-                    var rezmodel = new TrainingViewModel();
-                    rezmodel.Id = rez.Id;
-                    rezmodel.Name = rez.Name;
-                    rezmodel.TrainerId = rez.TrainerId;
-                    rezmodel.Price = rez.Price;
-                    rezmodel.MaxUsers = rez.MaxUsers;
-                    return View(rezmodel);
+                    if ((int)Session["User"] == rez.TrainerId)
+                    {
+                        var rezmodel = new TrainingViewModel();
+                        rezmodel.Id = rez.Id;
+                        rezmodel.Name = rez.Name;
+                        rezmodel.TrainerId = rez.TrainerId;
+                        rezmodel.Price = rez.Price;
+                        rezmodel.MaxUsers = rez.MaxUsers;
+                        return View(rezmodel);
+                    }else
+                    {
+                        return RedirectToAction("TrainingsListByTrainerId");
+                    }
                 }
                 return RedirectToAction("TrainingsListByTrainerId");
             }
