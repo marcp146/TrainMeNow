@@ -39,25 +39,14 @@ namespace TrainMeNowMVC.Controllers
             {
                 try
                 {
-
-                    Random rnd = new Random();
                     var user = new User();
-                    user.Id = rnd.Next(100000); ;
                     user.Username = model.Username;
                     user.Email = model.Email;
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
-
-                    //using (MD5 md5 = MD5.Create())
-                    //{
-                    //    user.Password = md5.ComputeHash(Encoding.UTF8.GetBytes(model.Password)).ToString();
-                    //}
-                    
-                    
-                    user.Password = model.Password;
+                    user.Password = GenerateHash(model.Password);
                     user.RoleId = 3;
                    
-
                     ctx.Users.Add(user);
                     ctx.SaveChanges();
                 }
@@ -81,7 +70,8 @@ namespace TrainMeNowMVC.Controllers
         public ActionResult Login(UserViewModel model)
         {
             var username = model.Username;
-            var password = model.Password;
+            var password = GenerateHash(model.Password);
+
             List<User> listaUseri = UsersDAL.getUsers();
             if (username != null)
             {
@@ -173,16 +163,14 @@ namespace TrainMeNowMVC.Controllers
         public string GenerateHash(string pass)
         {
 
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pass);
-            byte[] hash = md5.ComputeHash(inputBytes);
-
-            StringBuilder hashPass = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+            System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+            System.Text.StringBuilder hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(pass), 0, Encoding.UTF8.GetByteCount(pass));
+            foreach (byte theByte in crypto)
             {
-                hashPass.Append(hash[i].ToString("X2"));
+                hash.Append(theByte.ToString("x2"));
             }
-            return hashPass.ToString();
+            return hash.ToString();
         }
     }
 }
