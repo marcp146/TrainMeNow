@@ -11,8 +11,8 @@ namespace TrainMeNowMVC.Models
         [Key]
         public int Id { get; set; } 
         public string Name { get; set; } 
-        public int? TrainerId { get; set; } 
-        public decimal? Price { get; set; } 
-        public int? MaxUsers { get; set; }
+        public int TrainerId { get; set; } 
+        public decimal Price { get; set; } 
+        public int MaxUsers { get; set; }
     }
 }
