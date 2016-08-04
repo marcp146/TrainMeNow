@@ -44,7 +44,7 @@ namespace TrainMeNowMVC.Controllers
                     user.Email = model.Email;
                     user.FirstName = model.FirstName;
                     user.LastName = model.LastName;
-                    user.Password = GenerateHash(model.Password);
+                    user.Password = CalculateMD5Hash(model.Password);
                     user.RoleId = 3;
                    
                     ctx.Users.Add(user);
@@ -61,6 +61,36 @@ namespace TrainMeNowMVC.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+
+
+        public string CalculateMD5Hash(string input)
+
+        {
+
+            // step 1, calculate MD5 hash from input
+
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+
+            {
+
+                sb.Append(hash[i].ToString("X2"));
+
+            }
+
+            return sb.ToString();
+
+        }
+
         [HttpGet]
         public ActionResult Login()
         {
