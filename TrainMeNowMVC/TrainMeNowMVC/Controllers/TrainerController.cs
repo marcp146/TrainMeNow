@@ -18,7 +18,7 @@ namespace TrainMeNowMVC.Controllers
             return View();
         }
 
-        public ActionResult ListTrainees(int currentTrainingID)
+        public ActionResult ListTrainees(string id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -39,7 +39,7 @@ namespace TrainMeNowMVC.Controllers
                     //    });
                     //}
 
-
+                    int currentTrainingID = Int32.Parse(id);
                     List<OrderViewModel> ordersList = new List<OrderViewModel>();
                     var ordersDal = new OrdersDAL();
 

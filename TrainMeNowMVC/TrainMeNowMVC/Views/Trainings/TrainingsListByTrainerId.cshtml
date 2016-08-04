@@ -64,7 +64,7 @@
                 @Html.ActionLink("Edit Trainings", "EditTraining", new { controller = "Trainings", id = item.Id }, new { @class = "btn btn-info" })
             </td>
             <td>
-                @Html.ActionLink("ListTrainees", "ListTrainees", new { controller = "Trainer", id = item.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("View enrolled users", "ListTrainees", new { controller = "Trainer", id = item.Id }, new { @class = "btn btn-info" })
             </td>
         </tr>
         }
