@@ -33,6 +33,8 @@
         @Html.ActionLink("View Trainers", "TrainerList", "Admin");
         <br />
         @Html.ActionLink("View Trainings", "TrainingList", "Admin");
+        <br />
+        @Html.ActionLink("View Trainees", "TraineesList", "Admin");
     }
     else if ((int)Session["RoleId"] == 2)
     {
