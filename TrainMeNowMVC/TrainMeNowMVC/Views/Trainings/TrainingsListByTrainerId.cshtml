@@ -63,9 +63,12 @@
             <td>
                 @Html.ActionLink("Edit Trainings", "EditTraining", new { controller = "Trainings", id = item.Id }, new { @class = "btn btn-info" })
             </td>
-            <td>
-                @Html.ActionLink("View enrolled users", "ListTrainees", new { controller = "Trainer", id = item.Id }, new { @class = "btn btn-info" })
-            </td>
+            @if ((int)Session["RoleId"] == 1 || (int)Session["RoleId"] == 2)
+            {
+                <td>
+                    @Html.ActionLink("View Enrolled Users", "ListTrainees", new { controller = "Trainer", id = item.Id }, new { @class = "btn btn-info" })
+                </td>
+            }
         </tr>
         }
 
