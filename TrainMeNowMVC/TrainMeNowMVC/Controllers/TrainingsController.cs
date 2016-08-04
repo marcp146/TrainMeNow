@@ -19,7 +19,8 @@ namespace TrainMeNowMVC.Controllers
                 int nr = (int)Session["User"];
                 var trainingsList = new TrainingsDal().getTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
                 return View(trainingsList);
-            }else
+            }
+            else
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -49,7 +50,8 @@ namespace TrainMeNowMVC.Controllers
                 trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers);
 
                 return RedirectToAction("TrainingsListByTrainerId");
-            }else
+            }
+            else
             {
                 return RedirectToAction("Login", "Account");
             }
