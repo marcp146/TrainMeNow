@@ -14,12 +14,25 @@ namespace TrainMeNowMVC.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Adress { get; set; }
+        public string Phone { get; set; }
         // public int RoleId { get; set; }
         public bool IsTrainer
         {
             get
             {
-                return Id == 2;
+                return IsTrainer;
+            }
+            set
+            {
+                if (Id == 2)
+                {
+                    IsTrainer = true;
+                }
+                else
+                {
+                    IsTrainer = false;
+                }
             }
         }
     }
