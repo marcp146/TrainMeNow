@@ -17,7 +17,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public bool EditTraining(int id, decimal? price, int? maxusers)
+        public bool EditTraining(int id, decimal price, int maxusers)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -33,7 +33,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public void Create(string _Name, int? _TrainerId, decimal? _Price, int? _MaxUsers)
+        public void Create(string _Name, int _TrainerId, decimal _Price, int _MaxUsers)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {

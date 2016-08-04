@@ -22,9 +22,14 @@ namespace TrainMeNowDAL
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> TrainerId { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<int> MaxUsers { get; set; }
+        public int TrainerId { get; set; }
+        public decimal Price { get; set; }
+        public int MaxUsers { get; set; }
+        public int EnrolledUsers { get; set; }
+        public string Language { get; set; }
+        public string Description { get; set; }
+        public int Rating { get; set; }
+        public int NumberOfRationgs { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
