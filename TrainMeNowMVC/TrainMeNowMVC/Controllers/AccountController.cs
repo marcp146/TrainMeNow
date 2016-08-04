@@ -136,6 +136,8 @@ namespace TrainMeNowMVC.Controllers
                 model.FirstName = user.FirstName;
                 model.LastName = user.LastName;
                 model.Email = user.Email;
+                model.Phone = user.Phone;
+                model.Adress = user.Address;
                 return View(model);
             }
             else
@@ -154,6 +156,8 @@ namespace TrainMeNowMVC.Controllers
             userinfo.Password = model.Password;
             userinfo.FirstName = model.FirstName;
             userinfo.LastName = model.LastName;
+            userinfo.Address = model.Adress;
+            userinfo.Phone = model.Phone;
             using (var dal = new Internship2016NetTrainMeNowEntities())
             {
                 dal.Entry(userinfo).State = System.Data.Entity.EntityState.Modified;
@@ -161,6 +165,32 @@ namespace TrainMeNowMVC.Controllers
             }
             return RedirectToAction("EditAccount");
         }
+        
+        public ActionResult ChangePass()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ChangePass(string oldPass,string newPass, string verifyPass)
+        {
+            User user;
+            using(var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                user = ctx.Users.Find((int)Session["User"]);
+            }
+            if(user.Password == CalculateMD5Hash(oldPass) && newPass == verifyPass)
+            {
+                user.Password = CalculateMD5Hash(newPass);
+                using (var ctx = new Internship2016NetTrainMeNowEntities())
+                {
+                    ctx.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
+                }
+
+            }
+            return RedirectToAction("EditAccount");
+        }
+
         public ActionResult LogOff(UserViewModel model)
         {
             Session["User"] = null;
