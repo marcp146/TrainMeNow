@@ -14,6 +14,7 @@ namespace TrainMeNowMVC.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+
         public ActionResult Index()
         {
             if (Session["User"] != null)

@@ -17,7 +17,7 @@ namespace TrainMeNowMVC.Controllers
         {
             return View();
         }
-
+        [CustomAuthorize.CustomAuthorize(2)]
         public ActionResult ListTrainees()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())

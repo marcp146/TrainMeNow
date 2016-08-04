@@ -8,11 +8,20 @@
 @using (Html.BeginForm("EditTrainingData", "Trainings", FormMethod.Get))
 {
     @Html.HiddenFor(m => m.Id)
-    <label>Price:</label>
+    <label>Name:</label>
+    @Html.TextBoxFor(m => m.Name)
+    <br></br>
+    <label>Price: </label>
     @Html.TextBoxFor(m => m.Price)
-
-    <label>MaxUsers: </label>
+    <br></br>
+    <label>MaxUsers:</label>
     @Html.TextBoxFor(m => m.MaxUsers)
+    <br></br>
+    <label>Language:</label>
+    @Html.TextBoxFor(m => m.Language)
+    <br></br>
+    <label>Description:</label>
+    @Html.TextBoxFor(m => m.Description)
 
     <button class="btn btn-success" type="submit">Submit</button>
 }
