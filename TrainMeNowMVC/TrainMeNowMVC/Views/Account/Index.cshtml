@@ -27,7 +27,7 @@
 
     if ((int)Session["RoleId"] == 1)
     {
-        @Html.ActionLink("Manage Trainers", "EditAccount", "Admin");
+        @Html.ActionLink("Manage Trainers", "ManageTrainers", "Admin");
         <br />
         @Html.ActionLink("View Trainers", "TrainerList", "Admin");
         <br />
@@ -36,7 +36,7 @@
     else if ((int)Session["RoleId"] == 2)
     {
         @Html.ActionLink("Create Training", "CreateTraining", "Trainings");
-
+        <br />
         @Html.ActionLink("View Trainings", "TrainingsListByTrainerId", "Trainings");
     }
     else if ((int)Session["RoleId"] == 3)
