@@ -55,6 +55,35 @@ namespace TrainMeNowMVC.Controllers
             }
         }
 
+        [HttpGet] 
+        public ActionResult Buy(int id)
+        {
+            if (Session["User"] != null)
+            {
+
+                List<UserTrainingsViewModel> orderslist = new List<UserTrainingsViewModel>(); 
+                using(var ctx= new Internship2016NetTrainMeNowEntities())
+                {
+                    var training = ctx.Trainings.Where(x => x.Id == id).FirstOrDefault();
+                    int? maxUsers = training.MaxUsers;
+
+                    var user = ctx.Users.Find((int)Session["User"]);
+                    var myTrainingList = user.Orders;
+                    if (maxUsers > 0)
+                    {
+                        maxUsers = maxUsers - 1; 
+
+                        var order =;
+                        myTrainingList.Add(order);
+                    }
+
+                }
+
+            }
+
+                return View();
+        }
+
         public ActionResult BrowseByName(string id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
