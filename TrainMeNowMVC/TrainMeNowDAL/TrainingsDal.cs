@@ -17,7 +17,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public bool EditTraining(int id, decimal price, int maxusers)
+        public bool EditTraining(int id, decimal price, int maxusers, string _Description, string _Language)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -26,6 +26,8 @@ namespace TrainMeNowDAL
                 {
                     trn.Price = price;
                     trn.MaxUsers = maxusers;
+                    trn.Description = _Description;
+                    trn.Language = _Language;
                     ctx.SaveChanges();
                     return true;
                 }
@@ -33,11 +35,11 @@ namespace TrainMeNowDAL
             }
         }
 
-        public void Create(string _Name, int _TrainerId, decimal _Price, int _MaxUsers)
+        public void Create(string _Name, int _TrainerId, decimal _Price, int _MaxUsers,string _Description,string _Language)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                ctx.Trainings.Add(new Training { Name = _Name, TrainerId = _TrainerId, Price = _Price, MaxUsers = _MaxUsers });
+                ctx.Trainings.Add(new Training { Name = _Name, TrainerId = _TrainerId, Price = _Price, MaxUsers = _MaxUsers,Description=_Description,NumberOfRationgs=0,Language=_Language ,EnrolledUsers=0,Rating=0 });
                 ctx.SaveChanges();
             }
         }
