@@ -46,19 +46,19 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(model => item.EnrolledUsers)
+                @Html.DisplayFor(modelItem => item.EnrolledUsers)
             </td>
             <td>
-                @Html.DisplayFor(model => item.NumberOfRationgs)
+                @Html.DisplayFor(modelItem => item.NumberOfRationgs)
             </td>
             <td>
-                @Html.DisplayFor(model => item.Rating)
+                @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                @Html.DisplayFor(model => item.Language)
+                @Html.DisplayFor(modelItem => item.Language)
             </td>
             <td>
-                @Html.DisplayFor(model => item.Description)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.ActionLink("Edit Trainings", "EditTraining", new { controller = "Trainings", id = item.Id }, new { @class = "btn btn-info" })
