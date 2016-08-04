@@ -10,15 +10,15 @@
     <table class="table">
         <tr>
             <td>Old Password: </td>
-            <td>@Html.TextBox("oldPass","", new { @class = "form-control" })</td>
+            <td>@Html.TextBox("oldPass","", new { @type = "password",@class = "form-control" })</td>
         </tr>
         <tr>
             <td>New Password: </td>
-            <td>@Html.TextBox("newPass", "", new { @class = "form-control" })</td>
+            <td>@Html.TextBox("newPass", "", new { @type = "password",@class = "form-control" })</td>
         </tr>
         <tr>
             <td>Confirm New Password: </td>
-            <td>@Html.TextBox("verifyPass", "", new { @class = "form-control" })</td>
+            <td>@Html.TextBox("verifyPass", "", new {@type = "password", @class = "form-control" })</td>
         </tr>
     </table>
     <button type="submit" class="btn btn-primary">Change Password</button>
