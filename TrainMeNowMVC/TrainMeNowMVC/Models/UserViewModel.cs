@@ -19,7 +19,18 @@ namespace TrainMeNowMVC.Models
         {
             get
             {
-                return Id == 2;
+                return IsTrainer;
+            }
+            set
+            {
+                if (Id == 2)
+                {
+                    IsTrainer = true;
+                }
+                else
+                {
+                    IsTrainer = false;
+                }
             }
         }
     }
