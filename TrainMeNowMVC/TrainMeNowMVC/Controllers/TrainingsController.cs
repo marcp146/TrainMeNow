@@ -96,8 +96,8 @@ namespace TrainMeNowMVC.Controllers
                     {
                         maxUsers = maxUsers - 1; 
 
-                        //var order =;
-                        //myTrainingList.Add(order);
+                       // var order =;
+                      //  myTrainingList.Add(order);
                     }
 
                 }

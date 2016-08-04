@@ -173,16 +173,14 @@ namespace TrainMeNowMVC.Controllers
         public string GenerateHash(string pass)
         {
 
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pass);
-            byte[] hash = md5.ComputeHash(inputBytes);
-
-            StringBuilder hashPass = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+            System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+            System.Text.StringBuilder hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(pass), 0, Encoding.UTF8.GetByteCount(pass));
+            foreach (byte theByte in crypto)
             {
-                hashPass.Append(hash[i].ToString("X2"));
+                hash.Append(theByte.ToString("x2"));
             }
-            return hashPass.ToString();
+            return hash.ToString();
         }
     }
 }
