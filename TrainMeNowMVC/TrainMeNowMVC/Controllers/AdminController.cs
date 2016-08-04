@@ -79,9 +79,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpPost]
         public ActionResult ManageTrainers(List<UserViewModel> model)
         {
-
-
-
+            
             return View(model);
         }
 
