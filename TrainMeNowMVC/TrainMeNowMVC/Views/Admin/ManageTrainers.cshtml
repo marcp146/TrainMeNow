@@ -23,8 +23,10 @@
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
-                <td><input type="checkbox" id="@user.Username" name="selectedIds" value="@user.Id" /></td>
+                <td>@Html.CheckBoxFor(m=>user.IsTrainer, new { @checked = "checked" })</td>
             </tr>
         }
     </table>
+
+    <button type="submit" class="btn btn-primary">Confirm</button>
 }
