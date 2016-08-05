@@ -21,6 +21,10 @@
             <td>@trainer.TrainerName</td>
             <td>@trainer.Price</td>
             <td>@trainer.MaxUsers</td>
+            <td>
+                @Html.ActionLink("View Enrolled Users", "ListTrainees", new { controller = "Trainer", id = trainer.Id }, new { @class = "btn btn-info" })
+            </td>
+            
         </tr>
     }
 </table>

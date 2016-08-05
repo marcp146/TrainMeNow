@@ -17,61 +17,43 @@ namespace TrainMeNowMVC.Controllers
         {
             return View();
         }
-        [CustomAuthorize.CustomAuthorize(2)]
-        public ActionResult ListTrainees()
+        [CustomAuthorize.CustomAuthorize(1,2)]
+        public ActionResult ListTrainees(int id)
         {
+            const int adminRoleID = 1;
+            const int trainerRoleID = 2;
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                if (Session["RoleId"] != null && (int)Session["RoleId"] == 2)
+                if (Session["RoleId"] != null && ((int)Session["RoleId"] == trainerRoleID || (int)Session["RoleId"] == adminRoleID))
                 {
-                    int currentTrainerID = (int)Session["User"];
-                    var trainingsList = new List<TrainingViewModel>();
-                    var trainingsDal = new TrainingsDal();
-                    foreach (var training in trainingsDal.getTrainingsByTrainerId(currentTrainerID))
-                    {
-                        trainingsList.Add(new TrainingViewModel
-                        {
-                            Id = training.Id,
-                            Name = training.Name,
-                            TrainerId = training.TrainerId,
-                            Price = training.Price,
-                            MaxUsers = training.MaxUsers
-                        });
-                    }
-
-
+                    int currentTrainingID = id;
                     List<OrderViewModel> ordersList = new List<OrderViewModel>();
                     var ordersDal = new OrdersDAL();
-                    foreach (var tr in trainingsList)
+                    foreach (var order in ordersDal.GetOrdersByTrainingID(currentTrainingID))
                     {
-                        foreach (var order in ordersDal.GetOrdersByTrainingID(tr.Id))
+                        ordersList.Add(new OrderViewModel
                         {
-                            ordersList.Add(new OrderViewModel
-                            {
-                                Id = order.ID,
-                                UserId = order.UserID,
-                                TrainingId = order.TrainingID,
-                                PaymentId = order.PaymentID
-                            });
-                        }
+                            Id = order.ID,
+                            UserId = order.UserID,
+                            TrainingId = order.TrainingID,
+                            PaymentId = order.PaymentID
+                        });
                     }
 
                     List<UserViewModel> usersList = new List<UserViewModel>();
                     var usersDal = new UsersDAL();
                     foreach (var or in ordersList)
                     {
-                        foreach (var user in usersDal.getUsersById(or.UserId))
+                        var user = usersDal.getUser(or.UserId);
+                        usersList.Add(new UserViewModel
                         {
-                            usersList.Add(new UserViewModel
-                            {
-                                Id = user.Id,
-                                Username = user.Username,
-                                FirstName = user.FirstName,
-                                LastName = user.LastName,
-                                Email = user.Email,
-                                Password = user.Password,
-                            });
-                        }
+                            Id = user.Id,
+                            Username = user.Username,
+                            FirstName = user.FirstName,
+                            LastName = user.LastName,
+                            Email = user.Email,
+                            Password = user.Password,
+                        });
                     }
 
                     return View(usersList);

@@ -13,7 +13,7 @@ namespace TrainMeNowMVC.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        [CustomAuthorize.CustomAuthorize(1,2,3)]
+        [CustomAuthorize.CustomAuthorize(1, 2, 3)]
         public ActionResult Index()
         {
             return View();
@@ -81,16 +81,22 @@ namespace TrainMeNowMVC.Controllers
         [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult ManageTrainers(List<UserViewModel> model)
         {
-            
+
             return View(model);
         }
 
         [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult TrainingList()
         {
-            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel { Id = x.Id,
-                Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers,
-                TrainerName =(new UsersDAL().getUser((int)x.TrainerId).FirstName +" "+ new UsersDAL().getUser((int)x.TrainerId).LastName)}).ToList();
+            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                TrainerId = x.TrainerId,
+                Price = x.Price,
+                MaxUsers = x.MaxUsers,
+                TrainerName = (new UsersDAL().getUser((int)x.TrainerId).FirstName + " " + new UsersDAL().getUser((int)x.TrainerId).LastName)
+            }).ToList();
             return View(trainingList);
         }
 
@@ -117,48 +123,25 @@ namespace TrainMeNowMVC.Controllers
                         });
                     }
 
-                    List<UserViewModel> usersListWithDuplicates = new List<UserViewModel>();
+                    List<UserViewModel> usersList = new List<UserViewModel>();
                     var usersDal = new UsersDAL();
                     foreach (var order in ordersList)
                     {
-                        foreach (var user in usersDal.getUsersById(order.UserId))
-                        {
-                            usersListWithDuplicates.Add(new UserViewModel
+                        var user0 = usersDal.getUser(order.UserId);
+                        UserViewModel user = new UserViewModel
                             {
-                                Id = user.Id,
-                                Username = user.Username,
-                                FirstName = user.FirstName,
-                                LastName = user.LastName,
-                                Email = user.Email,
-                                Password = user.Password,
-                            });
+                                Id = user0.Id,
+                                Username = user0.Username,
+                                FirstName = user0.FirstName,
+                                LastName = user0.LastName,
+                                Email = user0.Email,
+                                Password = user0.Password,
+                            };
+                        if (usersList.Find(u => u.Id == user.Id) == null)
+                        {
+                            usersList.Add(user);
                         }
                     }
-
-                    List<UserViewModel> usersList = new List<UserViewModel>();
-                    foreach (var user in usersListWithDuplicates)
-                    {
-                        usersList.Add(user);
-                    }
-
-                    foreach (var user in usersListWithDuplicates)
-                    {
-                        int appearances = 0;
-                        foreach (var user2 in usersListWithDuplicates)
-                        {
-                            bool appearancesIncremented = false;
-                            if (user.Id == user2.Id)
-                            {
-                                appearances++;
-                                appearancesIncremented = true;
-                            }
-                            if (appearances > 1 && appearancesIncremented == true )
-                            {
-                                usersList.Remove(user2);
-                            }
-                        }
-                    }
-
                     return View(usersList);
                 }
                 else
