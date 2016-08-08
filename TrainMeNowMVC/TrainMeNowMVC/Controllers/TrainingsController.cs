@@ -241,7 +241,7 @@ namespace TrainMeNowMVC.Controllers
             }
             else
             {
-                return RedirectToAction("TrainingsListByTrainerId");
+                return RedirectToAction("EditTraining");
             }
         }
     }
