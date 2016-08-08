@@ -18,7 +18,7 @@ namespace TrainMeNowMVC.Controllers
             if (Session["User"] != null)
             {
                 int nr = (int)Session["User"];
-                var trainingsList = new TrainingsDal().getTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name,
+                var trainingsList = new TrainingsDal().GetTrainingsByTrainerId(nr).Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name,
                     TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers,Description=x.Description,Language=x.Language,Rating=x.Rating,NumberOfRationgs=x.NumberOfRationgs,EnrolledUsers=x.EnrolledUsers }).ToList();
                 return View(trainingsList);
             }

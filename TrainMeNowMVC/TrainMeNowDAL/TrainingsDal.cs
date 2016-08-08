@@ -8,7 +8,7 @@ namespace TrainMeNowDAL
 {
     public class TrainingsDal
     {
-        public List<Training> getTrainingsByTrainerId(int? id)
+        public List<Training> GetTrainingsByTrainerId(int? id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -44,12 +44,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public object getTrainings(int idDeProba)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Training> getAllTrainings()
+        public List<Training> GetAllTrainings()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {

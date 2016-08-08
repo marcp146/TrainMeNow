@@ -60,7 +60,7 @@ namespace TrainMeNowMVC.Controllers
         }
 
 
-        public string CalculateMD5Hash(string input)
+        private string CalculateMD5Hash(string input)
 
         {
 
@@ -99,20 +99,30 @@ namespace TrainMeNowMVC.Controllers
             var username = model.Username;
             var password = CalculateMD5Hash(model.Password);
 
-            List<User> listaUseri = UsersDAL.getUsers();
+            List<User> listaUseri = UsersDAL.GetUsers();
             if (username != null)
             {
-                foreach (User u in listaUseri)
+                // Raul: Am modificat dupa cum zicea in task-ul de code review (sa foloseasca linq expression)
+                List<User> loggedUser = listaUseri.Where(u => u.Username == username && u.Password == password).ToList();
+                if (loggedUser.Count() > 0)
                 {
-                    if (u.Username.Equals(username) && u.Password.Equals(password))
-                    {
-                        Session["User"] = u.Id;
-                        Session["RoleId"] = u.RoleId;
+                    Session["User"] = loggedUser[0].Id;
+                    Session["RoleId"] = loggedUser[0].RoleId;
 
-
-                        return RedirectToAction("Index", "Home");
-                    }
+                    return RedirectToAction("Index", "Home");
                 }
+                // Pana vede Dani modificarea las codul lui comentat
+                //foreach (User u in listaUseri)
+                //{
+                //    if (u.Username.Equals(username) && u.Password.Equals(password))
+                //    {
+                //        Session["User"] = u.Id;
+                //        Session["RoleId"] = u.RoleId;
+
+
+                //        return RedirectToAction("Index", "Home");
+                //    }
+                //}
                 return RedirectToAction("Register", "Account");
             }
 
@@ -127,7 +137,7 @@ namespace TrainMeNowMVC.Controllers
                 var model = new UserViewModel();
                 var dal = new UsersDAL();
                 var user = new User();
-                user = dal.getUser((int)Session["User"]);
+                user = dal.GetUser((int)Session["User"]);
                 model.Password = user.Password;
                 model.FirstName = user.FirstName;
                 model.LastName = user.LastName;
@@ -147,7 +157,7 @@ namespace TrainMeNowMVC.Controllers
 
             var userinfo = new User();
             var userdal = new UsersDAL();
-            userinfo = userdal.getUser((int)Session["User"]);
+            userinfo = userdal.GetUser((int)Session["User"]);
             userinfo.Email = model.Email;
             userinfo.FirstName = model.FirstName;
             userinfo.LastName = model.LastName;
