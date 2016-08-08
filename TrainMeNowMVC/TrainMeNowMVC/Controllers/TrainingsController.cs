@@ -50,7 +50,19 @@ namespace TrainMeNowMVC.Controllers
             {
                 TrainingsDal trn = new TrainingsDal();
                 model.TrainerId = (int)Session["User"];
-                trn.Create(model.Name, model.TrainerId, model.Price, model.MaxUsers,model.Description,model.Language);
+                Training training = new Training
+                {
+                    Name = model.Name,
+                    TrainerId = model.TrainerId,
+                    Price = model.Price,
+                    MaxUsers = model.MaxUsers,
+                    Description = model.Description,
+                    NumberOfRationgs = 0,
+                    Language = model.Language,
+                    EnrolledUsers = 0,
+                    Rating = 0
+                };
+                trn.Create(training);
 
                 return RedirectToAction("TrainingsListByTrainerId");
             }
