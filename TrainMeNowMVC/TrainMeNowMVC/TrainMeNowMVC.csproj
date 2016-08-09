@@ -294,6 +294,7 @@
     <Content Include="Views\Trainings\SearchByCategory.cshtml" />
     <Content Include="Views\Trainings\SearchByName.cshtml" />
     <Content Include="Views\Trainings\BrowseAll.cshtml" />
+    <Content Include="Views\Account\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
