@@ -290,6 +290,10 @@
     <Content Include="Views\Admin\TraineesList.cshtml" />
     <Content Include="Views\Trainings\BrowseByLanguage.cshtml" />
     <Content Include="Views\Trainings\BrowseByCategory.cshtml" />
+    <Content Include="Views\Trainings\SearchByLanguage.cshtml" />
+    <Content Include="Views\Trainings\SearchByCategory.cshtml" />
+    <Content Include="Views\Trainings\SearchByName.cshtml" />
+    <Content Include="Views\Trainings\BrowseAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

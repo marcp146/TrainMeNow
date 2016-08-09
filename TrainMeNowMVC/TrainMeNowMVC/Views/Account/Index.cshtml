@@ -24,7 +24,9 @@
     <br />
     @Html.ActionLink("View Enroled Trainings", "EnrolledTrainings", "Trainings");
     <br />
-    @Html.ActionLink("View all Trainings", "Display", "Trainings");
+    @Html.ActionLink("View all Trainings", "Display", "Trainings"); 
+    <br />
+    @Html.ActionLink("Browse for Trainings", "BrowseAll", "Trainings"); 
     <br />
 
     if ((int)Session["RoleId"] == 1)
