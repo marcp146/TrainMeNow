@@ -30,7 +30,7 @@
         <tr>
             <td>Phone: </td>
             <td>
-                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" ,  pattern = "[0][7][0-9]{8}" })
             </td>
 
         </tr>

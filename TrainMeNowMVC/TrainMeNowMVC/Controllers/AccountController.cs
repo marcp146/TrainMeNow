@@ -97,6 +97,7 @@ namespace TrainMeNowMVC.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            
             return View();
         }
         [HttpPost]
@@ -114,7 +115,7 @@ namespace TrainMeNowMVC.Controllers
                 {
                     Session["User"] = loggedUser[0].Id;
                     Session["RoleId"] = loggedUser[0].RoleId;
-
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 // Pana vede Dani modificarea las codul lui comentat....defapt eral al meu  - Bogdan :))
