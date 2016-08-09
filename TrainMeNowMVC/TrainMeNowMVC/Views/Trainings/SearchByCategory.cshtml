@@ -1,0 +1,25 @@
+﻿@model TrainMeNowMVC.Models.TrainingViewModel
+@{
+    ViewBag.Title = "SearchByCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search By Category</h2>
+@using (Html.BeginForm("BrowseByCategory", "Trainings", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                <label>Category:</label>
+            </td>
+
+            <td>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </td>
+            <td>
+                <button class="btn btn-success" type="submit">Browse</button>
+            </td>
+        </tr>
+    </table>
+
+}

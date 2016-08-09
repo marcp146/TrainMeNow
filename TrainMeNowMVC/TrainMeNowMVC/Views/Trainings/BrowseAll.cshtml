@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "BrowseAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pick your browsing filter </h2> 
+<label>Browse by Category</label> 
+@Html.ActionLink("Browse by Category", "SearchByCategory", new { controller = "Trainings"}, new { @class = "btn btn-success" }) 
+<br /> 
+<br /> 
+<br />
+<label>Browse by Language</label>
+@Html.ActionLink("Browse by Language", "SearchByLanguage", new { controller = "Trainings" }, new { @class = "btn btn-success" })  
+<br /> 
+<br /> 
+<br />
+<label>Browse by Trainer Name</label> 
+@Html.ActionLink("Browse by Trainer Name", "SearchByName", new { controller = "Trainings" }, new { @class = "btn btn-success" }) 
