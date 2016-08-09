@@ -130,12 +130,12 @@ namespace TrainMeNowMVC.Controllers
                 //        return RedirectToAction("Index", "Home");
                 //    }
                 //}
-
-
-                ModelState.AddModelError("password", "The username or password is incorrect");
+                
                 //return RedirectToAction("Register", "Account");
             }
-            
+
+            ModelState.AddModelError("password", "The username or password is incorrect");
+
             return View();
         }
 
