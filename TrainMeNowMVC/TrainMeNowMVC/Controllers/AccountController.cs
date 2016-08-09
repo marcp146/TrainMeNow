@@ -56,6 +56,7 @@ namespace TrainMeNowMVC.Controllers
                     Debug.WriteLine(e.StackTrace);
                 }
             }
+            Login(model);
             return RedirectToAction("Index", "Home");
         }
 
