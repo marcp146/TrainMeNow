@@ -111,7 +111,7 @@ namespace TrainMeNowMVC.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                // Pana vede Dani modificarea las codul lui comentat
+                // Pana vede Dani modificarea las codul lui comentat....defapt eral al meu  - Bogdan :))
                 //foreach (User u in listaUseri)
                 //{
                 //    if (u.Username.Equals(username) && u.Password.Equals(password))
@@ -123,9 +123,12 @@ namespace TrainMeNowMVC.Controllers
                 //        return RedirectToAction("Index", "Home");
                 //    }
                 //}
-                return RedirectToAction("Register", "Account");
-            }
 
+
+                ModelState.AddModelError("password", "The username or password is incorrect");
+                //return RedirectToAction("Register", "Account");
+            }
+            
             return View();
         }
 
