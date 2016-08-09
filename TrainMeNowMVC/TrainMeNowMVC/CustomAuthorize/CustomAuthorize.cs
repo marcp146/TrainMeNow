@@ -47,6 +47,8 @@ namespace TrainMeNowMVC.CustomAuthorize
         {
             filterContext.Result = new RedirectToRouteResult(new
             RouteValueDictionary(new { controller = "Account", action = "Login" }));
+            
+            
         }
     }
 }
