@@ -8,7 +8,7 @@ namespace TrainMeNowDAL
 {
     public class UsersDAL
     {
-        public User getUser(int id)
+        public User GetUser(int id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -18,7 +18,7 @@ namespace TrainMeNowDAL
         }
 
 
-        public static List<User> getUsers()
+        public static List<User> GetUsers()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -27,7 +27,7 @@ namespace TrainMeNowDAL
             }
         }
 
-        public static List<User> getUsersByRole(int roleId)
+        public static List<User> GetUsersByRole(int roleId)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {

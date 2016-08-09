@@ -44,7 +44,7 @@ namespace TrainMeNowMVC.Controllers
                     var usersDal = new UsersDAL();
                     foreach (var or in ordersList)
                     {
-                        var user = usersDal.getUser(or.UserId);
+                        var user = usersDal.GetUser(or.UserId);
                         usersList.Add(new UserViewModel
                         {
                             Id = user.Id,

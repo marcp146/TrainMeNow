@@ -8,7 +8,7 @@ namespace TrainMeNowDAL
 {
     public class TrainingsDal
     {
-        public List<Training> getTrainingsByTrainerId(int? id)
+        public List<Training> GetTrainingsByTrainerId(int? id)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -35,21 +35,27 @@ namespace TrainMeNowDAL
             }
         }
 
-        public void Create(string _Name, int _TrainerId, decimal _Price, int _MaxUsers,string _Description,string _Language)
+        public void Create(Training training)
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                ctx.Trainings.Add(new Training { Name = _Name, TrainerId = _TrainerId, Price = _Price, MaxUsers = _MaxUsers,Description=_Description,NumberOfRationgs=0,Language=_Language ,EnrolledUsers=0,Rating=0 });
+                ctx.Trainings.Add(new Training
+                {
+                    Name = training.Name,
+                    TrainerId = training.TrainerId,
+                    Price = training.Price,
+                    MaxUsers = training.MaxUsers,
+                    Description = training.Description,
+                    NumberOfRationgs = 0,
+                    Language = training.Language,
+                    EnrolledUsers = 0,
+                    Rating = 0
+                });
                 ctx.SaveChanges();
             }
         }
 
-        public object getTrainings(int idDeProba)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Training> getAllTrainings()
+        public List<Training> GetAllTrainings()
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
@@ -63,33 +69,6 @@ namespace TrainMeNowDAL
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
                 var trn = ctx.Trainings.Find(id);
-                return trn;
-            }
-        } 
-
-        public static List<Training> GetTrainingsByLanguage(string language)
-        {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
-                var trn = ctx.Trainings.Where(x => x.Language == language).ToList();
-                return trn;
-            }
-        }
-
-        public static List<Training> GetTrainingsByName(string name)
-        {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
-                var trn = ctx.Trainings.Where(x => x.Name == name).ToList();
-                return trn;
-            }
-        } 
-
-        public static List<Training>  GetTrainingsByUserId(int id)
-        {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
-                var trn = ctx.Trainings.Where(x => x.TrainerId == id).ToList();
                 return trn;
             }
         }

@@ -24,7 +24,7 @@ namespace TrainMeNowMVC.Controllers
             if (Session["RoleId"] != null && (int)Session["RoleId"] == 1)
             {
                 var trainers = new List<UserViewModel>();
-                foreach (var user in UsersDAL.getUsersByRole(2))
+                foreach (var user in UsersDAL.GetUsersByRole(2))
                 {
                     trainers.Add(new UserViewModel
                     {
@@ -55,8 +55,8 @@ namespace TrainMeNowMVC.Controllers
                 var trainerId = 2;
                 var userId = 3;
 
-                users = UsersDAL.getUsersByRole(trainerId);
-                users.AddRange(UsersDAL.getUsersByRole(userId));
+                users = UsersDAL.GetUsersByRole(trainerId);
+                users.AddRange(UsersDAL.GetUsersByRole(userId));
 
                 foreach (var u in users)
                 {
@@ -88,14 +88,14 @@ namespace TrainMeNowMVC.Controllers
         [CustomAuthorize.CustomAuthorize(1)]
         public ActionResult TrainingList()
         {
-            var trainingList = new TrainingsDal().getAllTrainings().Select(x => new TrainingViewModel
+            var trainingList = new TrainingsDal().GetAllTrainings().Select(x => new TrainingViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
                 TrainerId = x.TrainerId,
                 Price = x.Price,
                 MaxUsers = x.MaxUsers,
-                TrainerName = (new UsersDAL().getUser((int)x.TrainerId).FirstName + " " + new UsersDAL().getUser((int)x.TrainerId).LastName)
+                TrainerName = (new UsersDAL().GetUser((int)x.TrainerId).FirstName + " " + new UsersDAL().GetUser((int)x.TrainerId).LastName)
             }).ToList();
             return View(trainingList);
         }
@@ -127,7 +127,7 @@ namespace TrainMeNowMVC.Controllers
                     var usersDal = new UsersDAL();
                     foreach (var order in ordersList)
                     {
-                        var user0 = usersDal.getUser(order.UserId);
+                        var user0 = usersDal.GetUser(order.UserId);
                         UserViewModel user = new UserViewModel
                             {
                                 Id = user0.Id,

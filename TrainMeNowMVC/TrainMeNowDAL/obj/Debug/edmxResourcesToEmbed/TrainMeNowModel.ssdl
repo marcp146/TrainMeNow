@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="TrainingID" Type="int" Nullable="false" />
     <Property Name="PaymentID" Type="int" Nullable="false" />
@@ -14,39 +14,56 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Trainings">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nchar" MaxLength="50" />
-    <Property Name="TrainerId" Type="int" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="MaxUsers" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TrainerId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MaxUsers" Type="int" Nullable="false" />
+    <Property Name="EnrolledUsers" Type="int" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="NumberOfRationgs" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK_Orders_Payments">
-    <End Role="Payments" Type="Self.Payments" Multiplicity="1" />
+  <EntityType Name="WishLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TrainingId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Orders_Payments1">
+    <End Role="Payments" Type="Self.Payments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Payments">
@@ -57,8 +74,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Orders_Trainings">
-    <End Role="Trainings" Type="Self.Trainings" Multiplicity="1" />
+  <Association Name="FK_Orders_Trainings1">
+    <End Role="Trainings" Type="Self.Trainings" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Trainings">
@@ -69,8 +88,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Orders_Users">
-    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+  <Association Name="FK_Orders_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -81,8 +102,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Trainings_Users">
-    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+  <Association Name="FK_Trainings_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Trainings" Type="Self.Trainings" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -93,7 +114,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Users_Roles">
+  <Association Name="FK_Users_Roles1">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -111,23 +132,24 @@
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Trainings" EntityType="Self.Trainings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Orders_Payments" Association="Self.FK_Orders_Payments">
+    <EntitySet Name="WishLists" EntityType="Self.WishLists" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Orders_Payments1" Association="Self.FK_Orders_Payments1">
       <End Role="Payments" EntitySet="Payments" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_Orders_Trainings" Association="Self.FK_Orders_Trainings">
+    <AssociationSet Name="FK_Orders_Trainings1" Association="Self.FK_Orders_Trainings1">
       <End Role="Trainings" EntitySet="Trainings" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+    <AssociationSet Name="FK_Orders_Users1" Association="Self.FK_Orders_Users1">
       <End Role="Users" EntitySet="Users" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_Trainings_Users" Association="Self.FK_Trainings_Users">
+    <AssociationSet Name="FK_Trainings_Users1" Association="Self.FK_Trainings_Users1">
       <End Role="Users" EntitySet="Users" />
       <End Role="Trainings" EntitySet="Trainings" />
     </AssociationSet>
-    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+    <AssociationSet Name="FK_Users_Roles1" Association="Self.FK_Users_Roles1">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
