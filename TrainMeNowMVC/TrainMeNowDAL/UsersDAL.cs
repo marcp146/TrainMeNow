@@ -34,6 +34,15 @@ namespace TrainMeNowDAL
                 var users = ctx.Users.Where(m => m.RoleId == roleId).ToList();
                 return users;
             }
+        }  
+
+        public User GetUserByName(string name)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var user = ctx.Users.Where(m => m.LastName == name).FirstOrDefault();
+                return user;
+            }
         }
 
         public void SaveUser(User u)

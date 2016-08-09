@@ -77,7 +77,7 @@ namespace TrainMeNowMVC.Controllers
         {
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
-                var trainings = ctx.Trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                var trainings = ctx.Trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers, EnrolledUsers=x.EnrolledUsers, Language=x.Language }).ToList();
                 return View(trainings);
             }
 
@@ -89,7 +89,8 @@ namespace TrainMeNowMVC.Controllers
             using (var ctx = new Internship2016NetTrainMeNowEntities())
             {
                 var trainings = ctx.Trainings.Where(x => x.Id==id).ToList();
-                var trainingList = trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                var trainingList = trainings.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers, EnrolledUsers=x.EnrolledUsers
+                    ,Language=x.Language}).ToList();
                 return View(trainingList);
             }
         }
@@ -122,55 +123,65 @@ namespace TrainMeNowMVC.Controllers
             }
 
                 return View();
+        }
+
+        
+        public ActionResult BrowseByLanguage(TrainingViewModel model)
+        {
+                var trainingList= TrainingsDal.GetTrainingsByLanguage(model.Language);
+                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers,EnrolledUsers=x.
+                    EnrolledUsers,Language=x.Language}).ToList();
+                return View(trainings);
+          
         } 
 
-        public ActionResult BrowseByLanguage(string id)
+        
+        public ActionResult SearchByLanguage()
         {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
-                
-                var trainingList= ctx.Trainings.Where(x => x.Language== id).ToList();
-                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
-                return View(trainings);
-            }
-
-                
+            return View();
         }
 
-        public ActionResult BrowseByCategory(string id)
+        public ActionResult BrowseByCategory(TrainingViewModel model)
         {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
 
-                var trainingList = ctx.Trainings.Where(x => x.Name == id).ToList();
-                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+
+                var trainingList = TrainingsDal.GetTrainingsByName(model.Name);
+                var trainings = trainingList.Select(x => new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers,EnrolledUsers=x.EnrolledUsers, Language=x.Language }).ToList();
                 return View(trainings);
-            }
+            
 
 
+        } 
+
+        public ActionResult SearchByCategory()
+        {
+            return View();
         }
 
 
-        public ActionResult BrowseByName(string id)
+        public ActionResult BrowseByName(UserViewModel id)
         {
-            using (var ctx = new Internship2016NetTrainMeNowEntities())
-            {
 
-                var user = ctx.Users.Where(x => x.LastName == id).FirstOrDefault();
+
+                var user =new UsersDAL().GetUserByName(id.LastName); 
                 int ident = user.Id;
-                var trainings = ctx.Trainings.Where(x => x.TrainerId == ident).ToList(); 
-                var trainingList= trainings.Select(x=> new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers }).ToList();
+                var trainings = TrainingsDal.GetTrainingsByUserId(ident);
+                var trainingList= trainings.Select(x=> new TrainingViewModel { Id = x.Id, Name = x.Name, TrainerId = x.TrainerId, Price = x.Price, MaxUsers = x.MaxUsers, EnrolledUsers=x.EnrolledUsers,Language=x.Language }).ToList();
 
                 return View(trainingList);
 
-            }
-        }  
+        }   
 
-        public ActionResult Browse(string id)
+        public ActionResult SearchByName()
         {
-
-            return View(id);
+            return View();
         }
+
+        public ActionResult BrowseAll()
+        {
+            return View();
+        }
+        
 
         [CustomAuthorize.CustomAuthorize(1,2,3)]
         public ActionResult EnrolledTrainings()

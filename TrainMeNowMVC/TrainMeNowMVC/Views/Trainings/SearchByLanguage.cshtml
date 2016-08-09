@@ -1,0 +1,27 @@
+﻿@model TrainMeNowMVC.Models.TrainingViewModel
+@{
+    ViewBag.Title = "Search By Language";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search By Language</h2> 
+@using (Html.BeginForm("BrowseByLanguage", "Trainings", FormMethod.Post))
+{
+  <table>
+     <tr> 
+         <td>
+         <label>Language:</label>
+         </td>
+          
+    <td>
+        @Html.TextBoxFor(m => m.Language, new { @class = "form-control" })
+    </td> 
+         <td>
+             <button class="btn btn-success" type="submit">Browse</button>
+         </td>
+     </tr> 
+  </table>
+
+}
+
+
