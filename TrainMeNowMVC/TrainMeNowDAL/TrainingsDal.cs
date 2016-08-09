@@ -71,6 +71,34 @@ namespace TrainMeNowDAL
                 var trn = ctx.Trainings.Find(id);
                 return trn;
             }
+        } 
+
+        public static List<Training> GetTrainingsByLanguage(string language)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trn = ctx.Trainings.Where(x => x.Language == language).ToList();
+                return trn;
+            }
         }
+
+        public static List<Training> GetTrainingsByName(string name)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trn = ctx.Trainings.Where(x => x.Name == name).ToList();
+                return trn;
+            }
+        }
+
+        public static List<Training> GetTrainingsByUserId(int id)
+        {
+            using (var ctx = new Internship2016NetTrainMeNowEntities())
+            {
+                var trn = ctx.Trainings.Where(x => x.TrainerId== id).ToList();
+                return trn;
+            }
+        }
+
     }
 }
