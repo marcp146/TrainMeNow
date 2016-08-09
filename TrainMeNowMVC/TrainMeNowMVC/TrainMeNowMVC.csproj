@@ -290,6 +290,7 @@
     <Content Include="Views\Admin\TraineesList.cshtml" />
     <Content Include="Views\Trainings\BrowseByLanguage.cshtml" />
     <Content Include="Views\Trainings\BrowseByCategory.cshtml" />
+    <Content Include="Views\Account\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
